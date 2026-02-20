@@ -826,7 +826,71 @@ Strong opinions about productivity. Push back when needed.
         </div>
       </section>
 
-      {/* ═══ 15. COMMUNITY ═══ */}
+      {/* ═══ 15. GUARANTEE ═══ */}
+      <section style={{ ...sec, padding: "60px 28px" }}>
+        <div style={{ maxWidth: "800px", margin: "0 auto" }}>
+          <ScrollReveal>
+            <div style={{
+              background: "linear-gradient(135deg, rgba(102,187,106,.06), rgba(102,187,106,.02))",
+              border: "1px solid rgba(102,187,106,.25)",
+              borderRadius: "24px", padding: "48px 40px", textAlign: "center",
+              position: "relative", overflow: "hidden",
+            }}>
+              <div style={{
+                position: "absolute", top: 0, left: 0, right: 0, bottom: 0,
+                background: "radial-gradient(ellipse 60% 40% at 50% 0%, rgba(102,187,106,.06), transparent 70%)",
+                pointerEvents: "none",
+              }} />
+              <div style={{ position: "relative", zIndex: 1 }}>
+                <div style={{ fontSize: "42px", marginBottom: "12px" }}>🛡️</div>
+                <div style={{ fontSize: "10px", fontWeight: 700, letterSpacing: "4px", color: "#66BB6A", textTransform: "uppercase", marginBottom: "10px" }}>
+                  The Claw Guarantee
+                </div>
+                <h2 style={{ fontSize: "clamp(24px,4vw,36px)", fontFamily: "'Playfair Display', serif", fontWeight: 900, lineHeight: 1.2, marginBottom: "16px" }}>
+                  Your AI is live in 48 hours.<br />
+                  <span style={{ color: "#66BB6A" }}>Or you don&apos;t pay.</span>
+                </h2>
+                <p style={{ fontSize: "15px", color: "rgba(255,255,255,.55)", lineHeight: 1.8, maxWidth: "560px", margin: "0 auto 28px" }}>
+                  We&apos;ve done this enough times to be certain. Our 9-phase SOP and 12-point security protocol make the outcome predictable. The risk is ours — not yours.
+                </p>
+                <div style={{ display: "flex", flexWrap: "wrap", gap: "10px", justifyContent: "center", marginBottom: "28px" }}>
+                  {[
+                    "OpenClaw fully installed & operational",
+                    "All 12 security points verified",
+                    "SOUL.md live & personalized",
+                    "At least 1 channel connected",
+                    "Onboarding call completed",
+                  ].map((item, i) => (
+                    <div key={i} style={{
+                      display: "flex", alignItems: "center", gap: "7px",
+                      background: "rgba(102,187,106,.08)", border: "1px solid rgba(102,187,106,.2)",
+                      borderRadius: "20px", padding: "7px 14px",
+                    }}>
+                      <span style={{ color: "#66BB6A", fontSize: "12px" }}>✓</span>
+                      <span style={{ fontSize: "12px", color: "rgba(255,255,255,.7)" }}>{item}</span>
+                    </div>
+                  ))}
+                </div>
+                <a href="#audit" style={{
+                  display: "inline-block", padding: "14px 32px",
+                  background: "linear-gradient(135deg,#66BB6A,#4CAF50)",
+                  color: "white", borderRadius: "12px", textDecoration: "none",
+                  fontSize: "14px", fontWeight: 700, letterSpacing: ".5px",
+                  boxShadow: "0 8px 24px rgba(102,187,106,.25)",
+                  transition: "all .2s",
+                }}>
+                  Claim Your Guaranteed Setup →
+                </a>
+                <p style={{ fontSize: "11px", color: "rgba(255,255,255,.25)", marginTop: "14px" }}>
+                  Enterprise tier: 5-business-day guarantee. Excludes client delays in providing access.
+                </p>
+              </div>
+            </div>
+          </ScrollReveal>
+        </div>
+      </section>
+
+      {/* ═══ 16. COMMUNITY ═══ */}
       <section style={{ ...sec, background: "radial-gradient(ellipse 40% 40% at 50% 50%,rgba(233,69,96,.03),transparent 60%),#050d1a" }}>
         <div style={{ maxWidth: "850px", margin: "0 auto", textAlign: "center" }}>
           <ScrollReveal>
