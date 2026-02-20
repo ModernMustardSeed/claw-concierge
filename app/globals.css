@@ -56,13 +56,26 @@ body {
   0% { transform: translateX(0); }
   100% { transform: translateX(-50%); }
 }
-@keyframes bowLeft {
-  0%, 100% { transform: rotate(-8deg) translateY(0); }
-  40%, 60% { transform: rotate(-18deg) translateY(4px); }
+/* ─── Jig animations for duo lobsters ─── */
+@keyframes jigLeft {
+  0%   { transform: translateY(0)    rotate(0deg); }
+  20%  { transform: translateY(-14px) rotate(-7deg); }
+  40%  { transform: translateY(-6px)  rotate(5deg); }
+  60%  { transform: translateY(-18px) rotate(-4deg); }
+  80%  { transform: translateY(-8px)  rotate(6deg); }
+  100% { transform: translateY(0)    rotate(0deg); }
 }
-@keyframes bowRight {
-  0%, 100% { transform: scaleX(-1) rotate(-8deg) translateY(0); }
-  40%, 60% { transform: scaleX(-1) rotate(-14deg) translateY(2px); }
+@keyframes jigRight {
+  0%   { transform: translateY(-10px) rotate(5deg); }
+  20%  { transform: translateY(-4px)  rotate(-6deg); }
+  40%  { transform: translateY(-16px) rotate(4deg); }
+  60%  { transform: translateY(-6px)  rotate(-7deg); }
+  80%  { transform: translateY(-14px) rotate(3deg); }
+  100% { transform: translateY(-10px) rotate(5deg); }
+}
+@keyframes spotPulse {
+  0%, 100% { opacity: 0.5; transform: scaleX(1); }
+  50%       { opacity: 0.7; transform: scaleX(1.04); }
 }
 
 /* ─── Buttons ─── */
