@@ -84,17 +84,6 @@ export default function Home() {
           animation: "moonGlow 5s ease-in-out infinite",
           pointerEvents: "none",
         }} />
-        {/* Moon highlight — bright crescent gleam top-left */}
-        <div style={{
-          position: "absolute",
-          top: "calc(6% + 18px)",
-          left: "calc(4% + 16px)",
-          width: "70px",
-          height: "70px",
-          borderRadius: "50%",
-          background: "radial-gradient(circle at 42% 42%, rgba(240,248,255,0.18), transparent 65%)",
-          pointerEvents: "none",
-        }} />
         {/* Moon haze — wide soft bloom behind */}
         <div style={{
           position: "absolute",
