@@ -16,10 +16,6 @@ export default function Home() {
   const [mp, setMp] = useState({ x: 0.5, y: 0.5 });
 
   useEffect(() => {
-    const t = setInterval(() => setUC(p => (p + 1) % 7), 5000);
-    return () => clearInterval(t);
-  }, []);
-  useEffect(() => {
     const t = setInterval(() => setTL(p => (p + 1) % 8), 4000);
     return () => clearInterval(t);
   }, []);
