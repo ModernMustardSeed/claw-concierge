@@ -9,8 +9,22 @@ import FAQItem from "@/components/FAQItem";
 import AuditForm from "@/components/AuditForm";
 import LeadMagnet from "@/components/LeadMagnet";
 import FeatureCard from "@/components/FeatureCard";
+import WebsiteBrain from "@/components/WebsiteBrain";
+
+const MENU_ITEMS = [
+  { label: "How It Works", href: "#how", icon: "⚡" },
+  { label: "Use Cases", href: "#cases", icon: "💼" },
+  { label: "Security", href: "#security", icon: "🔒" },
+  { label: "Voice Staff", href: "#voice", icon: "🎙️" },
+  { label: "Pricing", href: "#pricing", icon: "💰" },
+  { label: "🛡️ Guarantee", href: "#guarantee", icon: "" },
+  { label: "Community", href: "#community", icon: "🦞" },
+  { label: "FAQ", href: "#faq", icon: "❓" },
+  { label: "Client Portal", href: "/clientportal", icon: "🔑" },
+];
 
 export default function Home() {
+  const [menuOpen, setMenuOpen] = useState(false);
   const [uc, setUC] = useState(0);
   const [tl, setTL] = useState(0);
   const [mp, setMp] = useState({ x: 0.5, y: 0.5 });
@@ -141,13 +155,14 @@ export default function Home() {
 
       {/* ═══ STICKY NAV ═══ */}
       <nav style={{
-        position: "fixed", top: 0, left: 0, right: 0, zIndex: 100,
+        position: "fixed", top: 0, left: 0, right: 0, zIndex: 200,
         display: "flex", alignItems: "center", justifyContent: "space-between",
-        padding: "0 28px", height: "56px",
-        background: "rgba(5,13,26,.85)", backdropFilter: "blur(16px)",
+        padding: "0 20px", height: "58px",
+        background: "rgba(5,13,26,.92)", backdropFilter: "blur(20px)",
         borderBottom: "1px solid rgba(255,255,255,.06)",
       }}>
-        <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
+        {/* Logo */}
+        <a href="/" style={{ display: "flex", alignItems: "center", gap: "8px", textDecoration: "none", color: "white" }}>
           <svg viewBox="0 0 400 400" width={22} height={22} style={{ display: "inline-block" }}>
             <defs><linearGradient id="nl" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stopColor="#FF6B6B"/><stop offset="100%" stopColor="#E94560"/></linearGradient></defs>
             <ellipse cx="200" cy="220" rx="55" ry="80" fill="url(#nl)"/>
@@ -161,8 +176,10 @@ export default function Home() {
             <ellipse cx="200" cy="362" rx="35" ry="14" fill="url(#nl)"/>
           </svg>
           <span style={{ fontSize: "13px", fontWeight: 800, fontFamily: "'Playfair Display', serif" }}>The Claw Concierge</span>
-        </div>
-        <div style={{ display: "flex", alignItems: "center", gap: "6px" }}>
+        </a>
+
+        {/* Desktop links */}
+        <div style={{ display: "flex", alignItems: "center", gap: "4px" }}>
           {[
             { label: "How It Works", href: "#how" },
             { label: "Pricing", href: "#pricing" },
@@ -171,10 +188,10 @@ export default function Home() {
           ].map((l) => (
             <a key={l.href} href={l.href} style={{
               fontSize: "12px", color: l.label.includes("Guarantee") ? "#66BB6A" : "rgba(255,255,255,.5)",
-              textDecoration: "none", padding: "6px 12px", borderRadius: "8px",
+              textDecoration: "none", padding: "6px 11px", borderRadius: "8px",
               border: l.label.includes("Guarantee") ? "1px solid rgba(102,187,106,.25)" : "1px solid transparent",
               fontWeight: l.label.includes("Guarantee") ? 700 : 500,
-              transition: "all .2s",
+              transition: "all .2s", whiteSpace: "nowrap",
             }}>
               {l.label}
             </a>
@@ -182,13 +199,99 @@ export default function Home() {
           <a href="#audit" style={{
             fontSize: "12px", fontWeight: 700, color: "white",
             background: "linear-gradient(135deg,#E94560,#FF6B6B)",
-            textDecoration: "none", padding: "7px 16px", borderRadius: "8px",
-            marginLeft: "4px",
+            textDecoration: "none", padding: "7px 14px", borderRadius: "8px",
+            marginLeft: "4px", whiteSpace: "nowrap",
           }}>
             Book Free Audit →
           </a>
+
+          {/* Hamburger */}
+          <button
+            onClick={() => setMenuOpen(p => !p)}
+            aria-label="Open menu"
+            style={{
+              marginLeft: "8px", width: "38px", height: "38px", borderRadius: "10px",
+              background: menuOpen ? "rgba(233,69,96,.12)" : "rgba(255,255,255,.05)",
+              border: `1px solid ${menuOpen ? "rgba(233,69,96,.3)" : "rgba(255,255,255,.1)"}`,
+              cursor: "pointer", color: menuOpen ? "#E94560" : "rgba(255,255,255,.6)",
+              display: "flex", flexDirection: "column", alignItems: "center",
+              justifyContent: "center", gap: "4px", padding: "8px",
+              transition: "all .2s",
+            }}
+          >
+            <div style={{ width: "16px", height: "2px", background: "currentColor", borderRadius: "2px", transition: "all .2s", transform: menuOpen ? "rotate(45deg) translate(4px, 4px)" : "none" }} />
+            <div style={{ width: "16px", height: "2px", background: "currentColor", borderRadius: "2px", opacity: menuOpen ? 0 : 1, transition: "all .2s" }} />
+            <div style={{ width: "16px", height: "2px", background: "currentColor", borderRadius: "2px", transition: "all .2s", transform: menuOpen ? "rotate(-45deg) translate(4px, -4px)" : "none" }} />
+          </button>
         </div>
       </nav>
+
+      {/* ═══ HAMBURGER MENU OVERLAY ═══ */}
+      {menuOpen && (
+        <div
+          style={{
+            position: "fixed", inset: 0, zIndex: 190,
+            background: "rgba(5,13,26,.95)", backdropFilter: "blur(20px)",
+            display: "flex", alignItems: "center", justifyContent: "center",
+            paddingTop: "58px",
+          }}
+          onClick={e => { if (e.target === e.currentTarget) setMenuOpen(false); }}
+        >
+          <div style={{ maxWidth: "500px", width: "100%", padding: "24px" }}>
+            <div style={{
+              fontSize: "10px", fontWeight: 700, letterSpacing: "4px",
+              color: "rgba(255,255,255,.25)", textTransform: "uppercase",
+              marginBottom: "20px", textAlign: "center",
+            }}>
+              THE CLAW CONCIERGE — EVERYWHERE AT ONCE
+            </div>
+
+            <div style={{ display: "flex", flexDirection: "column", gap: "6px" }}>
+              {MENU_ITEMS.map(item => (
+                <a
+                  key={item.href}
+                  href={item.href}
+                  onClick={() => setMenuOpen(false)}
+                  style={{
+                    display: "flex", alignItems: "center", gap: "16px",
+                    padding: "16px 20px", borderRadius: "14px",
+                    background: item.label === "Client Portal" ? "rgba(212,168,67,.06)" : "rgba(255,255,255,.03)",
+                    border: item.label === "Client Portal" ? "1px solid rgba(212,168,67,.2)" : "1px solid rgba(255,255,255,.06)",
+                    textDecoration: "none", color: "white",
+                    fontSize: "16px", fontWeight: 600,
+                    fontFamily: "'Playfair Display', serif",
+                    transition: "all .15s",
+                  }}
+                  onMouseEnter={e => { (e.currentTarget as HTMLElement).style.background = item.label === "Client Portal" ? "rgba(212,168,67,.1)" : "rgba(255,255,255,.06)"; }}
+                  onMouseLeave={e => { (e.currentTarget as HTMLElement).style.background = item.label === "Client Portal" ? "rgba(212,168,67,.06)" : "rgba(255,255,255,.03)"; }}
+                >
+                  {item.icon && <span style={{ fontSize: "20px", flexShrink: 0 }}>{item.icon}</span>}
+                  <span>{item.label}</span>
+                  {item.label === "Client Portal" && (
+                    <span style={{ marginLeft: "auto", fontSize: "10px", fontFamily: "'DM Sans', sans-serif", color: "#D4A843", fontWeight: 700, letterSpacing: "1px" }}>VIP →</span>
+                  )}
+                </a>
+              ))}
+            </div>
+
+            <div style={{ marginTop: "20px" }}>
+              <a
+                href="#audit"
+                onClick={() => setMenuOpen(false)}
+                style={{
+                  display: "block", textAlign: "center", padding: "16px",
+                  background: "linear-gradient(135deg,#E94560,#FF6B6B)",
+                  borderRadius: "14px", color: "white",
+                  fontSize: "15px", fontWeight: 700, textDecoration: "none",
+                  fontFamily: "'DM Sans', sans-serif",
+                }}
+              >
+                📅 Book Your Free Audit →
+              </a>
+            </div>
+          </div>
+        </div>
+      )}
 
       {/* ═══ 1. HERO ═══ */}
       <section style={{
@@ -198,7 +301,7 @@ export default function Home() {
         {/* ── Moon — upper left, glowing ── */}
         <div style={{
           position: "absolute",
-          top: "6%",
+          top: "10%",
           left: "4%",
           width: "210px",
           height: "210px",
@@ -211,7 +314,7 @@ export default function Home() {
         {/* Moon haze — wide soft bloom behind */}
         <div style={{
           position: "absolute",
-          top: "calc(6% - 40px)",
+          top: "calc(10% - 40px)",
           left: "calc(4% - 40px)",
           width: "290px",
           height: "290px",
@@ -220,11 +323,11 @@ export default function Home() {
           pointerEvents: "none",
         }} />
         {/* Moon craters */}
-        <div style={{ position: "absolute", top: "calc(6% + 58px)", left: "calc(4% + 82px)", width: "26px", height: "18px", borderRadius: "50%", border: "1px solid rgba(160,185,255,0.09)", background: "rgba(90,120,200,0.06)", pointerEvents: "none" }} />
-        <div style={{ position: "absolute", top: "calc(6% + 112px)", left: "calc(4% + 38px)", width: "16px", height: "11px", borderRadius: "50%", border: "1px solid rgba(160,185,255,0.08)", background: "rgba(90,120,200,0.05)", pointerEvents: "none" }} />
-        <div style={{ position: "absolute", top: "calc(6% + 78px)", left: "calc(4% + 136px)", width: "12px", height: "9px", borderRadius: "50%", border: "1px solid rgba(160,185,255,0.07)", background: "rgba(90,120,200,0.04)", pointerEvents: "none" }} />
-        <div style={{ position: "absolute", top: "calc(6% + 138px)", left: "calc(4% + 100px)", width: "18px", height: "13px", borderRadius: "50%", border: "1px solid rgba(160,185,255,0.07)", background: "rgba(90,120,200,0.04)", pointerEvents: "none" }} />
-        <div style={{ position: "absolute", top: "calc(6% + 42px)", left: "calc(4% + 148px)", width: "10px", height: "7px", borderRadius: "50%", border: "1px solid rgba(160,185,255,0.06)", background: "rgba(90,120,200,0.03)", pointerEvents: "none" }} />
+        <div style={{ position: "absolute", top: "calc(10% +58px)", left: "calc(4% + 82px)", width: "26px", height: "18px", borderRadius: "50%", border: "1px solid rgba(160,185,255,0.09)", background: "rgba(90,120,200,0.06)", pointerEvents: "none" }} />
+        <div style={{ position: "absolute", top: "calc(10% +112px)", left: "calc(4% + 38px)", width: "16px", height: "11px", borderRadius: "50%", border: "1px solid rgba(160,185,255,0.08)", background: "rgba(90,120,200,0.05)", pointerEvents: "none" }} />
+        <div style={{ position: "absolute", top: "calc(10% +78px)", left: "calc(4% + 136px)", width: "12px", height: "9px", borderRadius: "50%", border: "1px solid rgba(160,185,255,0.07)", background: "rgba(90,120,200,0.04)", pointerEvents: "none" }} />
+        <div style={{ position: "absolute", top: "calc(10% +138px)", left: "calc(4% + 100px)", width: "18px", height: "13px", borderRadius: "50%", border: "1px solid rgba(160,185,255,0.07)", background: "rgba(90,120,200,0.04)", pointerEvents: "none" }} />
+        <div style={{ position: "absolute", top: "calc(10% +42px)", left: "calc(4% + 148px)", width: "10px", height: "7px", borderRadius: "50%", border: "1px solid rgba(160,185,255,0.06)", background: "rgba(90,120,200,0.03)", pointerEvents: "none" }} />
 
         {/* Subtle deep background atmosphere */}
         <div style={{
@@ -243,7 +346,7 @@ export default function Home() {
           }} />
         ))}
 
-        <div style={{ position: "relative", zIndex: 10, textAlign: "center", padding: "100px 24px 60px", maxWidth: "960px" }}>
+        <div style={{ position: "relative", zIndex: 10, textAlign: "center", padding: "130px 24px 60px", maxWidth: "960px" }}>
           {/* Duo lobsters — spotlit, bowing to each other */}
           <div style={{ marginBottom: "8px" }}>
             <DuoLobsters size={380} />
@@ -499,7 +602,7 @@ export default function Home() {
       </div></section>
 
       {/* ═══ 6. USE CASES ═══ */}
-      <section style={{ ...sec, background: "radial-gradient(ellipse 50% 40% at 50% 50%,rgba(0,50,100,.06),transparent 60%),#050d1a" }}>
+      <section id="cases" style={{ ...sec, background: "radial-gradient(ellipse 50% 40% at 50% 50%,rgba(0,50,100,.06),transparent 60%),#050d1a" }}>
         <div style={{ maxWidth: "920px", margin: "0 auto" }}>
           <ScrollReveal>
             <SectionHeader
@@ -741,7 +844,7 @@ Strong opinions about productivity. Push back when needed.
       </div></section>
 
       {/* ═══ 11. VOICE STAFF ═══ */}
-      <section style={{ ...sec, padding: "70px 24px", background: "radial-gradient(ellipse 50% 40% at 50% 50%,rgba(212,168,67,.04),transparent 60%),#050d1a" }}>
+      <section id="voice" style={{ ...sec, padding: "70px 24px", background: "radial-gradient(ellipse 50% 40% at 50% 50%,rgba(212,168,67,.04),transparent 60%),#050d1a" }}>
         <div style={{ maxWidth: "860px", margin: "0 auto", textAlign: "center" }}>
           <ScrollReveal>
             <SectionHeader
@@ -772,7 +875,7 @@ Strong opinions about productivity. Push back when needed.
       </section>
 
       {/* ═══ 12. SECURITY ═══ */}
-      <section style={{ ...sec, padding: "70px 24px" }}><div style={{ maxWidth: "880px", margin: "0 auto" }}>
+      <section id="security" style={{ ...sec, padding: "70px 24px" }}><div style={{ maxWidth: "880px", margin: "0 auto" }}>
         <ScrollReveal>
           <div style={{ background: "rgba(10,22,40,.6)", border: "1px solid rgba(233,69,96,.1)", borderRadius: "20px", padding: "40px 28px" }}>
             <div style={{ display: "flex", alignItems: "center", gap: "12px", marginBottom: "20px" }}>
@@ -943,7 +1046,7 @@ Strong opinions about productivity. Push back when needed.
       </section>
 
       {/* ═══ 16. COMMUNITY ═══ */}
-      <section style={{ ...sec, background: "radial-gradient(ellipse 40% 40% at 50% 50%,rgba(233,69,96,.03),transparent 60%),#050d1a" }}>
+      <section id="community" style={{ ...sec, background: "radial-gradient(ellipse 40% 40% at 50% 50%,rgba(233,69,96,.03),transparent 60%),#050d1a" }}>
         <div style={{ maxWidth: "850px", margin: "0 auto", textAlign: "center" }}>
           <ScrollReveal>
             <div style={{ animation: "float 5s ease-in-out infinite", marginBottom: "14px" }}><Lobster s={50} id="commLob" /></div>
@@ -1008,7 +1111,7 @@ Strong opinions about productivity. Push back when needed.
       </section>
 
       {/* ═══ 17. FAQ ═══ */}
-      <section style={sec}><div style={{ maxWidth: "680px", margin: "0 auto" }}>
+      <section id="faq" style={sec}><div style={{ maxWidth: "680px", margin: "0 auto" }}>
         <ScrollReveal><SectionHeader tag="FAQ" title={<>Questions? <span style={{ color: "#FF6B6B" }}>Answers.</span></>} /></ScrollReveal>
         <ScrollReveal delay={.1}>
           <div>
@@ -1026,7 +1129,7 @@ Strong opinions about productivity. Push back when needed.
       </div></section>
 
       {/* ═══ 18. AUDIT ═══ */}
-      <section style={{ ...sec, background: "radial-gradient(ellipse 50% 40% at 50% 50%,rgba(233,69,96,.04),transparent 60%),#050d1a" }}>
+      <section id="audit" style={{ ...sec, background: "radial-gradient(ellipse 50% 40% at 50% 50%,rgba(233,69,96,.04),transparent 60%),#050d1a" }}>
         <div style={{ maxWidth: "750px", margin: "0 auto" }}>
           <ScrollReveal>
             <SectionHeader
@@ -1060,6 +1163,9 @@ Strong opinions about productivity. Push back when needed.
           </div>
         </ScrollReveal>
       </section>
+
+      {/* ═══ LOULOU BRAIN ═══ */}
+      <WebsiteBrain />
 
       {/* ═══ FOOTER ═══ */}
       <footer style={{ padding: "40px 24px", borderTop: "1px solid rgba(255,255,255,.04)", background: "#050d1a" }}>
