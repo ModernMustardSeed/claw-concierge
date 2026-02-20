@@ -2,12 +2,12 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Claw Concierge — Your AI Assistant, Done Right 🦞",
+  title: "The Claw Concierge — Your AI Assistant, Done Right 🦞",
   description:
     "We set up, secure, and manage OpenClaw — the most powerful personal AI assistant ever built — so you get the magic without the risk. White-glove AI concierge service + Voice Staff voice agents.",
-  keywords: ["AI assistant", "OpenClaw", "AI setup", "Voice Staff", "AI concierge", "Claw Concierge"],
+  keywords: ["AI assistant", "OpenClaw", "AI setup", "Voice Staff", "AI concierge", "The Claw Concierge"],
   openGraph: {
-    title: "Claw Concierge — Your AI Assistant, Done Right 🦞",
+    title: "The Claw Concierge — Your AI Assistant, Done Right 🦞",
     description:
       "White-glove OpenClaw setup, security hardening, and management. Voice Staff AI voice agents.",
     type: "website",

@@ -79,9 +79,7 @@ export default function Home() {
           width: "210px",
           height: "210px",
           borderRadius: "50%",
-          background: [
-            "radial-gradient(circle at 34% 34%, rgba(230,240,255,0.28) 0%, rgba(180,205,255,0.14) 28%, rgba(130,160,240,0.07) 52%, transparent 72%)",
-          ].join(", "),
+          background: "radial-gradient(circle at 50% 50%, rgba(230,240,255,0.30) 0%, rgba(180,205,255,0.16) 30%, rgba(130,160,240,0.08) 55%, transparent 75%)",
           border: "1px solid rgba(200,220,255,0.12)",
           animation: "moonGlow 5s ease-in-out infinite",
           pointerEvents: "none",
@@ -115,17 +113,11 @@ export default function Home() {
         <div style={{ position: "absolute", top: "calc(6% + 138px)", left: "calc(4% + 100px)", width: "18px", height: "13px", borderRadius: "50%", border: "1px solid rgba(160,185,255,0.07)", background: "rgba(90,120,200,0.04)", pointerEvents: "none" }} />
         <div style={{ position: "absolute", top: "calc(6% + 42px)", left: "calc(4% + 148px)", width: "10px", height: "7px", borderRadius: "50%", border: "1px solid rgba(160,185,255,0.06)", background: "rgba(90,120,200,0.03)", pointerEvents: "none" }} />
 
-        {/* Parallax light rays — angled from moon position upper-left */}
-        <div style={{
-          position: "absolute", top: 0, left: "6%", width: "72%", height: "100%",
-          background: "linear-gradient(180deg,rgba(100,180,255,.05) 0%,transparent 55%)",
-          clipPath: "polygon(16% 0,52% 0,76% 100%,8% 100%)",
-          transform: `translateX(${(mp.x - .5) * 30}px)`, transition: "transform .6s ease-out", pointerEvents: "none",
-        }} />
+        {/* Subtle deep background atmosphere */}
         <div style={{
           position: "absolute", top: 0, left: "25%", width: "50%", height: "65%",
-          background: "radial-gradient(ellipse at 50% 0%,rgba(233,69,96,.025),transparent 70%)",
-          transform: `translateX(${(mp.x - .5) * -12}px)`, transition: "transform .8s ease-out", pointerEvents: "none",
+          background: "radial-gradient(ellipse at 50% 0%,rgba(233,69,96,.018),transparent 70%)",
+          pointerEvents: "none",
         }} />
         {/* Floating bubbles */}
         {[12, 28, 45, 62, 78, 88, 35, 55].map((l, i) => (
@@ -148,7 +140,7 @@ export default function Home() {
             fontSize: "11px", fontWeight: 700, letterSpacing: "6px", color: "#E94560",
             marginBottom: "14px", textTransform: "uppercase", animation: "pulse 3s ease-in-out infinite",
           }}>
-            CLAW CONCIERGE
+            THE CLAW CONCIERGE
           </div>
 
           <h1 style={{
@@ -854,7 +846,7 @@ Strong opinions about productivity. Push back when needed.
         <div style={{ maxWidth: "800px", margin: "0 auto", textAlign: "center" }}>
           <div style={{ marginBottom: "12px" }}><Lobster s={28} id="footLob" /></div>
           <div style={{ fontSize: "11px", color: "rgba(255,255,255,.22)", lineHeight: 2 }}>
-            <span style={{ color: "#D4A843", fontWeight: 600 }}>Claw Concierge</span> • by Modern Mustard Seed • Kalispell, Montana<br />
+            <span style={{ color: "#D4A843", fontWeight: 600 }}>The Claw Concierge</span> • by Modern Mustard Seed • Kalispell, Montana<br />
             OpenClaw Setup & Management • Voice Staff AI Voice Agents • The Claw Collective<br />
             <span style={{ fontSize: "10px" }}>
               <a href="https://modernmustardseed.com" target="_blank" rel="noopener noreferrer" style={{ color: "rgba(255,255,255,.35)", textDecoration: "none", borderBottom: "1px solid rgba(255,255,255,.1)" }}>modernmustardseed.com</a>
