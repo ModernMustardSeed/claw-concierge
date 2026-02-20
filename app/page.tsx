@@ -725,6 +725,7 @@ Strong opinions about productivity. Push back when needed.
           {[
             ["🗄️", "Elite RAG System", "Ingest ALL your documents, SOPs, playbooks, product info into a vector-searchable knowledge base. Your AI doesn't just remember conversations — it has access to your entire institutional knowledge.", "#FF6B6B"],
             ["📊", "Command Center", "Custom dashboard showing all projects, missions, pending approvals, memory files, active agents, system health. Mission control for your AI fleet — one screen to rule them all.", "#D4A843"],
+            ["⚡", "Build Software — No Coding Needed", "Tell your AI what you want built. It builds it. Custom tools, apps, automations, and workflows created using plain English. No developer. No code. No waiting. Your ideas ship in hours, not months.", "#66BB6A"],
             ["🤖", "Multi-Agent Architecture", "One agent for sales, one for operations, one for content, one for DevOps. Each with their own SOUL.md, skills, and channels. Coordinated through shared memory.", "#AB47BC"],
             ["🎙️", "Voice Staff Integration", "The crown jewel. Text AI + Voice AI working in tandem. Voice Staff handles phones. OpenClaw handles everything else. Shared calendar, shared context, shared memory. Nobody else offers this.", "#64B5F6"],
           ].map(([i, t, d, c], idx) => (
@@ -1018,6 +1019,7 @@ Strong opinions about productivity. Push back when needed.
             <FAQItem q="Can you set this up remotely?" a="Yes — our default is a cloud VPS (DigitalOcean or Hetzner, $4-6/mo). We SSH in, configure everything, manage ongoing. This is actually MORE secure than a personal machine because it's fully isolated." />
             <FAQItem q="What's Voice Staff?" a="Our AI voice agent platform ($499/mo). It answers phone calls with natural conversation — qualifying leads, booking appointments, handling inquiries. Combined with OpenClaw, you get text + voice AI sharing the same brain." />
             <FAQItem q="How long does setup take?" a="Personal: 2-3 hours. Business Pro: 4-6 hours. Enterprise: 1-2 weeks for full multi-agent architecture. You're up and running fast." />
+            <FAQItem q="Can my AI actually build software for me?" a="Yes — and this is one of the most powerful capabilities most people don't know about. Tell your OpenClaw what you want built in plain English: 'Create a client intake form that saves to my spreadsheet' or 'Build a dashboard that tracks my weekly revenue.' It builds it. No coding, no developer, no waiting. Custom tools, apps, and automations — created using natural language." />
             <FAQItem q="What if I want to manage it myself?" a="Go for it! After setup, we can configure your Claw to teach YOU how to manage everything. It becomes your personal tutor. Many clients start with management and graduate to self-managing within a few months. Zero lock-in, ever." />
           </div>
         </ScrollReveal>
