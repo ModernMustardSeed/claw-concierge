@@ -178,27 +178,40 @@ export default function WebsiteBrain() {
     <>
       <style>{pulse}</style>
 
-      {/* Floating button */}
-      <button
-        onClick={() => setOpen(p => !p)}
-        aria-label="Chat with LouLou"
-        style={{
-          position: "fixed", bottom: "28px", right: "28px", zIndex: 1000,
-          width: "60px", height: "60px", borderRadius: "50%",
-          background: "white", border: "2px solid rgba(233,69,96,.25)",
-          cursor: "pointer",
-          boxShadow: open ? "0 0 0 4px rgba(233,69,96,.15), 0 6px 30px rgba(233,69,96,.3)" : "0 4px 20px rgba(233,69,96,.2)",
-          display: "flex", alignItems: "center", justifyContent: "center",
-          fontSize: "28px", transition: "all .2s",
-        }}
-      >
-        {open ? <span style={{ fontSize: "20px", color: "#E94560", fontWeight: 700 }}>✕</span> : "🦞"}
-      </button>
+      {/* Floating button + label */}
+      <div style={{ position: "fixed", bottom: "28px", right: "28px", zIndex: 1000, display: "flex", flexDirection: "column", alignItems: "center", gap: "6px" }}>
+        {!open && (
+          <div style={{
+            background: "rgba(5,13,26,.9)", backdropFilter: "blur(12px)",
+            border: "1px solid rgba(233,69,96,.2)", borderRadius: "20px",
+            padding: "4px 12px", fontSize: "11px", fontWeight: 700,
+            color: "rgba(255,255,255,.7)", letterSpacing: ".5px",
+            fontFamily: "'DM Sans', sans-serif", whiteSpace: "nowrap",
+            boxShadow: "0 2px 12px rgba(0,0,0,.3)",
+          }}>
+            Talk to LouLou 🦞
+          </div>
+        )}
+        <button
+          onClick={() => setOpen(p => !p)}
+          aria-label="Chat with LouLou"
+          style={{
+            width: "60px", height: "60px", borderRadius: "50%",
+            background: "white", border: "2px solid rgba(233,69,96,.25)",
+            cursor: "pointer",
+            boxShadow: open ? "0 0 0 4px rgba(233,69,96,.15), 0 6px 30px rgba(233,69,96,.3)" : "0 4px 20px rgba(233,69,96,.2)",
+            display: "flex", alignItems: "center", justifyContent: "center",
+            fontSize: "28px", transition: "all .2s",
+          }}
+        >
+          {open ? <span style={{ fontSize: "20px", color: "#E94560", fontWeight: 700 }}>✕</span> : "🦞"}
+        </button>
+      </div>
 
       {/* Chat panel */}
       {open && (
         <div style={{
-          position: "fixed", bottom: "102px", right: "28px", zIndex: 999,
+          position: "fixed", bottom: "112px", right: "28px", zIndex: 999,
           width: "min(370px, calc(100vw - 40px))", maxHeight: "560px",
           background: "rgba(5,13,26,.97)", backdropFilter: "blur(24px)",
           border: "1px solid rgba(233,69,96,.18)", borderRadius: "20px",
