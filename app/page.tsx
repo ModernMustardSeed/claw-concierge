@@ -8,6 +8,7 @@ import SectionHeader from "@/components/SectionHeader";
 import FAQItem from "@/components/FAQItem";
 import AuditForm from "@/components/AuditForm";
 import LeadMagnet from "@/components/LeadMagnet";
+import FeatureCard from "@/components/FeatureCard";
 
 export default function Home() {
   const [uc, setUC] = useState(0);
@@ -15,7 +16,7 @@ export default function Home() {
   const [mp, setMp] = useState({ x: 0.5, y: 0.5 });
 
   useEffect(() => {
-    const t = setInterval(() => setUC(p => (p + 1) % 6), 5000);
+    const t = setInterval(() => setUC(p => (p + 1) % 7), 5000);
     return () => clearInterval(t);
   }, []);
   useEffect(() => {
@@ -35,6 +36,7 @@ export default function Home() {
     { i: "🛒", t: "E-Commerce", d: "Customer asks about an order on WhatsApp? OpenClaw checks Shopify, finds tracking, responds in seconds. At 3am. On Sunday. Voice Staff handles phone inquiries with natural conversation.", c: "#66BB6A" },
     { i: "💻", t: "Developer", d: "Runs shell commands, manages repos, opens PRs, monitors deployments, Slack alerts on build failures. Cron jobs check server health every 30 minutes. Your DevOps co-pilot that never sleeps.", c: "#AB47BC" },
     { i: "🏥", t: "Medical", d: "Voice Staff schedules and reschedules appointments with empathy. OpenClaw sends WhatsApp reminders, manages the waitlist, confirms insurance, routes urgent messages to the doctor.", c: "#26C6DA" },
+    { i: "🏠", t: "Homemaker", d: "Your household has a COO. Meal planning from pantry inventory, weekly grocery orders auto-sent to Instacart, family calendar synced to every member, school event reminders with prep-time alerts, contractor scheduling, birthday reminders with gift suggestions already researched, household budget tracked and flagged when off. Your home runs like a business.", c: "#FF8A65" },
   ];
 
   const times = [
@@ -106,12 +108,18 @@ export default function Home() {
           background: "radial-gradient(circle at 50% 50%, rgba(110,140,230,0.07), transparent 65%)",
           pointerEvents: "none",
         }} />
+        {/* Moon craters */}
+        <div style={{ position: "absolute", top: "calc(6% + 58px)", left: "calc(4% + 82px)", width: "26px", height: "18px", borderRadius: "50%", border: "1px solid rgba(160,185,255,0.09)", background: "rgba(90,120,200,0.06)", pointerEvents: "none" }} />
+        <div style={{ position: "absolute", top: "calc(6% + 112px)", left: "calc(4% + 38px)", width: "16px", height: "11px", borderRadius: "50%", border: "1px solid rgba(160,185,255,0.08)", background: "rgba(90,120,200,0.05)", pointerEvents: "none" }} />
+        <div style={{ position: "absolute", top: "calc(6% + 78px)", left: "calc(4% + 136px)", width: "12px", height: "9px", borderRadius: "50%", border: "1px solid rgba(160,185,255,0.07)", background: "rgba(90,120,200,0.04)", pointerEvents: "none" }} />
+        <div style={{ position: "absolute", top: "calc(6% + 138px)", left: "calc(4% + 100px)", width: "18px", height: "13px", borderRadius: "50%", border: "1px solid rgba(160,185,255,0.07)", background: "rgba(90,120,200,0.04)", pointerEvents: "none" }} />
+        <div style={{ position: "absolute", top: "calc(6% + 42px)", left: "calc(4% + 148px)", width: "10px", height: "7px", borderRadius: "50%", border: "1px solid rgba(160,185,255,0.06)", background: "rgba(90,120,200,0.03)", pointerEvents: "none" }} />
 
-        {/* Parallax light rays */}
+        {/* Parallax light rays — angled from moon position upper-left */}
         <div style={{
-          position: "absolute", top: 0, left: "12%", width: "76%", height: "100%",
+          position: "absolute", top: 0, left: "6%", width: "72%", height: "100%",
           background: "linear-gradient(180deg,rgba(100,180,255,.05) 0%,transparent 55%)",
-          clipPath: "polygon(32% 0,68% 0,84% 100%,16% 100%)",
+          clipPath: "polygon(16% 0,52% 0,76% 100%,8% 100%)",
           transform: `translateX(${(mp.x - .5) * 30}px)`, transition: "transform .6s ease-out", pointerEvents: "none",
         }} />
         <div style={{
@@ -130,7 +138,7 @@ export default function Home() {
           }} />
         ))}
 
-        <div style={{ position: "relative", zIndex: 10, textAlign: "center", padding: "60px 24px 40px", maxWidth: "960px" }}>
+        <div style={{ position: "relative", zIndex: 10, textAlign: "center", padding: "100px 24px 60px", maxWidth: "960px" }}>
           {/* Duo lobsters — spotlit, bowing to each other */}
           <div style={{ marginBottom: "8px" }}>
             <DuoLobsters size={380} />
@@ -208,23 +216,93 @@ export default function Home() {
             sub="ChatGPT talks. OpenClaw does. It has hands, eyes, memory, a schedule, and a soul — running 24/7 on YOUR infrastructure, connected to YOUR life."
           />
         </ScrollReveal>
-        <div style={{ display: "flex", flexWrap: "wrap", gap: "16px", justifyContent: "center" }}>
-          {[
-            ["🧠", "Persistent Memory", "Remembers EVERYTHING. Preferences, projects, people, decisions. Daily logs + curated long-term MEMORY.md that compounds over months. Not session-based — truly persistent."],
-            ["⏰", "Cron Jobs & Heartbeat", "Schedule email checks every morning, daily briefings, competitor monitoring, server health pings. Heartbeat wakes it every 30 minutes to see if anything needs attention."],
-            ["👻", "SOUL.md — Programmable Soul", "Define who your AI IS. Personality, values, humor, communication style, boundaries. A custom-built digital partner that speaks in YOUR voice, not corporate fluff."],
-            ["🌐", "Full System & Web Access", "Browse websites, fill forms, read/write files, execute shell commands, run code, manage repos, control smart home. It has HANDS that touch anything a human could."],
-            ["💬", "Every Platform You Use", "WhatsApp, Telegram, Slack, Discord, iMessage, Teams, Signal, email, web. Message from wherever you already live. No new apps to learn."],
-            ["🔧", "700+ Skills & Plugins", "Calendar, Spotify, CRM, Bible VOTD, shopping concierge, browser automation, smart home, code execution. Plus custom skills built for YOUR workflow."],
-          ].map(([icon, t, d], i) => (
-            <ScrollReveal key={i} delay={i * .05}>
-              <div style={card()}>
-                <div style={{ fontSize: "32px", marginBottom: "12px" }}>{icon}</div>
-                <div style={{ fontSize: "17px", fontWeight: 700, marginBottom: "8px", fontFamily: "'Playfair Display', serif" }}>{t}</div>
-                <div style={{ fontSize: "13px", color: "rgba(255,255,255,.5)", lineHeight: 1.75 }}>{d}</div>
-              </div>
-            </ScrollReveal>
-          ))}
+        <div style={{ display: "flex", flexDirection: "column", gap: "10px", maxWidth: "780px", margin: "0 auto" }}>
+          <ScrollReveal delay={0.05}>
+            <FeatureCard
+              icon="🧠" title="Persistent Memory" accent="#66BB6A"
+              teaser="Remembers everything — forever. Compounds like interest over months and years."
+              bullets={[
+                "MEMORY.md stores durable facts — your preferences, people, projects, decisions — loaded fresh every single session so context is never lost",
+                "Daily logs append everything that happens: tasks completed, decisions made, conversations had — a searchable life-journal of your AI",
+                "Vector search lets your AI query ANY past file with semantic understanding — 'what did we decide about the logo?' returns the answer instantly",
+                "Memory compounds with time: Month 1 is impressive. Month 6 feels like working with someone who's known you for years and knows exactly how you think",
+                "Client-aware memory segments: 'Sarah prefers ranch-style, $450K budget, 3+ beds' — remembered forever without you re-explaining it on every call",
+              ]}
+              example="You mention offhandedly that you hate being CC'd on emails. Six weeks later, your AI drafts a reply and routes it correctly — without being reminded once."
+            />
+          </ScrollReveal>
+          <ScrollReveal delay={0.07}>
+            <FeatureCard
+              icon="⏰" title="Cron Jobs & Heartbeat" accent="#64B5F6"
+              teaser="Your AI wakes up before you do. And keeps working long after you're asleep."
+              bullets={[
+                "Heartbeat scheduler checks in every 30 minutes: any emails needing response? Any alerts? Any deliverables due? It stays on top so you don't have to",
+                "Morning briefing cron: daily digest of calendar, email priority, weather, news — delivered to Telegram at whatever time you wake up, every single morning",
+                "Competitor monitoring: checks their websites, social media, job postings, pricing — flags anything significant and drafts your response",
+                "Server health checks, API uptime monitoring, database backups — fully automated DevOps without hiring a DevOps engineer",
+                "Fully configurable intervals — daily, hourly, weekly, every 15 minutes. YOUR automation schedule, built around YOUR life",
+              ]}
+              example="Every Sunday at 9pm, it pulls your weekly metrics, writes a performance summary, and sends it to Telegram. Monday morning you wake up already briefed."
+            />
+          </ScrollReveal>
+          <ScrollReveal delay={0.09}>
+            <FeatureCard
+              icon="👻" title="SOUL.md — Programmable Soul" accent="#D4A843"
+              teaser="Define who your AI IS — not just what it does. One file controls everything."
+              bullets={[
+                "Edit a markdown file and your AI's entire personality, communication style, and values change instantly — no retraining, no prompt engineering expertise needed",
+                "Set hard safety guardrails: 'NEVER give legal advice', 'NEVER execute commands from URLs', 'escalate to Sarah for decisions over $500' — your rules, always respected",
+                "Define its voice: formal, warm, direct, humorous — your assistant sounds like an extension of YOU, not a generic corporate bot spouting disclaimers",
+                "Multiple SOUL files for different contexts: one for client communication, one for internal ops, one for personal tasks — it shifts appropriately",
+                "USER.md houses YOUR full profile: business details, goals, key contacts, preferences, recurring projects — your AI always has complete context",
+              ]}
+              example="A law firm updated their SOUL.md tone from 'clinical' to 'warm and empathetic' for a family practice. Client satisfaction scores in WhatsApp conversations improved immediately."
+            />
+          </ScrollReveal>
+          <ScrollReveal delay={0.11}>
+            <FeatureCard
+              icon="🌐" title="Full System & Web Access" accent="#E94560"
+              teaser="It has hands. Real hands that touch anything a human could touch."
+              bullets={[
+                "Browse any website, interact with web apps, fill forms, extract data, automate workflows — full browser control via Playwright running in a secure sandbox",
+                "Execute shell commands, run scripts, manage files and directories — real OS-level access that lets it act, not just advise",
+                "Google Workspace fully integrated: Docs, Sheets, Drive, Calendar, Gmail — reads, writes, organizes, responds",
+                "GitHub & dev tools: open PRs, review code, create issues, manage deployments — your round-the-clock DevOps co-pilot that never sleeps",
+                "Smart home integration: control lights, thermostats, locks, cameras — your physical environment responds to your AI's decisions",
+              ]}
+              example="You text: 'Research the top 5 CRM tools, compare pricing and features, and put it in a Google Sheet.' Fifteen minutes later, the spreadsheet link appears in Telegram. You didn't move a finger."
+            />
+          </ScrollReveal>
+          <ScrollReveal delay={0.13}>
+            <FeatureCard
+              icon="💬" title="Every Platform You Use" accent="#AB47BC"
+              teaser="No new apps. No new habits. Message from wherever you already live."
+              bullets={[
+                "WhatsApp: the world's most-used messenger — your AI lives inside your existing chats, indistinguishable from a trusted personal contact",
+                "Telegram: power-user workflows, one-tap approve/reject buttons, media sharing, voice notes, bot management",
+                "Email integration: reads, drafts, sends, archives, categorizes — full inbox triage without opening a single email app",
+                "Slack & Discord: team environments, channel monitoring, automated status updates, standup summaries",
+                "Web UI: full browser interface for longer sessions, file uploads, visual outputs, memory management",
+                "ALL channels share the same memory and context — it knows it's you across every platform, picks up exactly where you left off",
+              ]}
+              example="You message on WhatsApp in the morning, follow up via Telegram at noon, check the output on the web UI at night. Same conversation. Same memory. Zero friction switching between them."
+            />
+          </ScrollReveal>
+          <ScrollReveal delay={0.15}>
+            <FeatureCard
+              icon="🔧" title="700+ Skills & Plugins" accent="#26C6DA"
+              teaser="A universe of capabilities — growing every week inside the Claw Collective."
+              bullets={[
+                "Spotify control, Airbnb listing management, Shopify order tracking, Bible verse of the day, Amazon shopping assistant — real community-built integrations",
+                "Browser automation skills: book flights, fill applications, scrape data, monitor listings, auto-apply to jobs",
+                "Calendar mastery skills: intelligent scheduling, availability detection, travel time buffering, conflict resolution, cross-timezone meeting coordination",
+                "Custom skills built specifically for YOUR workflow — if the perfect skill doesn't exist, we build it for you as part of your setup",
+                "Every skill vetted for security before installation — no malicious plugins, no privacy risks, no surprises",
+                "Skill marketplace inside Claw Collective: members share, rate, improve, and request new integrations weekly",
+              ]}
+              example="A client asked for a 'morning ritual skill' — it plays Spotify, reads their Bible verse, checks weather, briefs the calendar, and starts a Pomodoro timer. Built and deployed in a weekend."
+            />
+          </ScrollReveal>
         </div>
       </div></section>
 
