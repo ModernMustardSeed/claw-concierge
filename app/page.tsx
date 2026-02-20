@@ -827,7 +827,7 @@ Strong opinions about productivity. Push back when needed.
       </section>
 
       {/* ═══ 15. GUARANTEE ═══ */}
-      <section style={{ ...sec, padding: "60px 28px" }}>
+      <section id="guarantee" style={{ ...sec, padding: "60px 28px" }}>
         <div style={{ maxWidth: "800px", margin: "0 auto" }}>
           <ScrollReveal>
             <div style={{
