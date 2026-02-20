@@ -69,6 +69,32 @@ export default function Home() {
         minHeight: "100vh", position: "relative", display: "flex", alignItems: "center", justifyContent: "center", overflow: "hidden",
         background: "radial-gradient(ellipse 80% 50% at 50% 100%,rgba(0,50,100,.35) 0%,transparent 60%),radial-gradient(ellipse 50% 40% at 25% 80%,rgba(0,80,120,.2) 0%,transparent 50%),linear-gradient(180deg,#050d1a,#0a1e3d 40%,#0d2847 70%,#0a1628)",
       }}>
+        {/* ── Moon — upper left, big, soft glow ── */}
+        <div style={{
+          position: "absolute",
+          top: "6%",
+          left: "4%",
+          width: "200px",
+          height: "200px",
+          borderRadius: "50%",
+          background: "radial-gradient(circle at 36% 36%, rgba(210,228,255,0.13) 0%, rgba(140,170,255,0.07) 38%, rgba(80,110,200,0.03) 60%, transparent 78%)",
+          border: "1px solid rgba(200,220,255,0.07)",
+          boxShadow: "0 0 70px 24px rgba(90,120,210,0.08), 0 0 140px 50px rgba(90,120,210,0.04)",
+          pointerEvents: "none",
+        }} />
+        {/* Moon surface detail — faint inner craters/tone */}
+        <div style={{
+          position: "absolute",
+          top: "calc(6% + 28px)",
+          left: "calc(4% + 22px)",
+          width: "80px",
+          height: "80px",
+          borderRadius: "50%",
+          background: "radial-gradient(circle at 40% 40%, rgba(200,220,255,0.05), transparent 70%)",
+          border: "1px solid rgba(200,220,255,0.04)",
+          pointerEvents: "none",
+        }} />
+
         {/* Parallax light rays */}
         <div style={{
           position: "absolute", top: 0, left: "12%", width: "76%", height: "100%",
@@ -625,8 +651,8 @@ Strong opinions about productivity. Push back when needed.
             <SectionHeader tag="Community" title="The Claw Collective" sub="Interactive tools, AI-powered software, vetted skills, weekly intelligence, and people building the future." />
           </ScrollReveal>
           <ScrollReveal delay={.1}>
-            <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(140px, 1fr))", gap: "10px", marginBottom: "32px" }}>
-              {[["🛠️", "Interactive Tools"], ["📊", "Weekly Intel"], ["🎓", "Courses"], ["🤝", "Peer Network"], ["🔒", "Vetted Skills"], ["💬", "Direct Access"], ["🎮", "Gamification"], ["🎁", "Templates"]].map(([i, t], idx) => (
+            <div style={{ display: "grid", gridTemplateColumns: "repeat(5, 1fr)", gap: "10px", marginBottom: "32px" }}>
+              {[["🛠️", "Interactive Tools"], ["📊", "Weekly Intel"], ["🎓", "Courses"], ["🤝", "Peer Network"], ["🔒", "Vetted Skills"], ["💬", "Direct Access"], ["🎮", "Gamification"], ["🎁", "Templates"], ["🤖", "Agent Library"], ["📣", "Signal Drops"]].map(([i, t], idx) => (
                 <div key={idx} style={{ background: "rgba(255,255,255,.02)", border: "1px solid rgba(255,255,255,.05)", borderRadius: "14px", padding: "16px 12px" }}>
                   <div style={{ fontSize: "20px", marginBottom: "5px" }}>{i}</div>
                   <div style={{ fontSize: "11px", fontWeight: 600, color: "rgba(255,255,255,.55)" }}>{t}</div>
@@ -746,6 +772,11 @@ Strong opinions about productivity. Push back when needed.
               <a href="https://voicestaff.pro" target="_blank" rel="noopener noreferrer" style={{ color: "rgba(255,255,255,.35)", textDecoration: "none", borderBottom: "1px solid rgba(255,255,255,.1)" }}>voicestaff.pro</a>
               {" "}• Built with 🦞 and faith
             </span>
+            <div style={{ marginTop: "14px" }}>
+              <a href="/playbook" style={{ fontSize: "11px", color: "#D4A843", textDecoration: "none", border: "1px solid rgba(212,168,67,.25)", borderRadius: "6px", padding: "5px 14px", letterSpacing: "1px" }}>
+                🦞 Project Playbook →
+              </a>
+            </div>
           </div>
         </div>
       </footer>

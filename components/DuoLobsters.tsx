@@ -15,37 +15,6 @@ export default function DuoLobsters({ size = 300 }: { size?: number }) {
       paddingTop: `${Math.round(size * 0.22)}px`, // room above for the spotlight + antennae
     }}>
 
-      {/* ── Single spotlight covering both ── */}
-      <div style={{
-        position: "absolute",
-        top: 0,
-        left: "50%",
-        transform: "translateX(-50%)",
-        width: `${Math.round(size * 1.05)}px`,
-        height: `${Math.round(size * 0.9)}px`,
-        background: [
-          "radial-gradient(ellipse 55% 100% at 50% 0%, rgba(255,210,120,0.22) 0%, transparent 55%)",
-          "radial-gradient(ellipse 30% 70% at 50% 0%, rgba(255,230,160,0.14) 0%, transparent 45%)",
-        ].join(", "),
-        clipPath: "polygon(28% 0%, 72% 0%, 90% 100%, 10% 100%)",
-        animation: "spotPulse 4s ease-in-out infinite",
-        pointerEvents: "none",
-      }} />
-
-      {/* Spotlight source glow — tiny bright dot at the top */}
-      <div style={{
-        position: "absolute",
-        top: 0,
-        left: "50%",
-        transform: "translateX(-50%)",
-        width: "10px",
-        height: "10px",
-        borderRadius: "50%",
-        background: "rgba(255,230,150,0.7)",
-        boxShadow: "0 0 18px 8px rgba(255,210,120,0.35)",
-        pointerEvents: "none",
-      }} />
-
       {/* ── Left lobster — jig animation ── */}
       <div style={{
         animation: "jigLeft 1.6s ease-in-out infinite",
