@@ -147,7 +147,7 @@ export default function PlaybookPage() {
         <div style={{ display: "flex", gap: "10px", flexWrap: "wrap", marginBottom: "36px" }}>
           <Stat label="Website" value="Live 🟢" color="#66BB6A" />
           <Stat label="Target MRR" value="$10K" color="#D4A843" />
-          <Stat label="Offer Range" value="$697–7.5K" color="#E94560" />
+          <Stat label="Offer Range" value="$897–9.5K" color="#E94560" />
           <Stat label="Clients" value="0 → 5" color="#64B5F6" />
           <Stat label="Phase" value="Launch" color="#AB47BC" />
         </div>
@@ -168,12 +168,12 @@ export default function PlaybookPage() {
         <Section title="Offer Stack & Pricing" accent="#D4A843" tag="OFFERS" defaultOpen>
           <div style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
             {[
-              { name: "Personal Claw", price: "$697 setup + $127/mo", emoji: "🦞", desc: "Layers 1-4. Full secure install, SOUL.md, USER.md, 1-2 channels, 5 skills, memory. 30-min onboarding. Community access.", color: "#64B5F6" },
-              { name: "Business Pro", price: "$2,497 setup + $397/mo", emoji: "🦞🦞", desc: "Everything + multi-channel, Docker sandbox, custom skills, cron jobs, VPS, AGENTS.md, 60-min strategy, 30 days priority.", color: "#E94560" },
-              { name: "Enterprise + Voice", price: "$7,500+ setup + $897/mo", emoji: "🦞🦞🦞", desc: "Everything + Voice Staff, multi-agent, Elite RAG, Command Center, full security assessment, white-glove 3-session onboarding.", color: "#D4A843" },
-              { name: "VIP Day", price: "$3,500 flat", emoji: "⚡", desc: "Intensive 1-day build. Deep custom. Great for business owners who want me in their systems hands-on.", color: "#AB47BC" },
-              { name: "Live Workshop", price: "$197/seat", emoji: "🎓", desc: "Group teach. Show the system, show the possibilities. Lead gen for Personal + Business installs.", color: "#66BB6A" },
-              { name: "Self-Paced Course", price: "$397", emoji: "📚", desc: "DIY with my frameworks. Gatekeep the actual config — sell the methodology. Funnel into managed clients.", color: "#26C6DA" },
+              { name: "Personal Claw", price: "$897 setup + $197/mo", emoji: "🦞", desc: "Layers 1-4. Full secure install, SOUL.md, USER.md, 1-2 channels, 5 skills, memory. 30-min onboarding. Community access.", color: "#64B5F6" },
+              { name: "Business Pro", price: "$2,997 setup + $497/mo", emoji: "🦞🦞", desc: "Everything + multi-channel, Docker sandbox, custom skills, cron jobs, VPS, AGENTS.md, 60-min strategy, 30 days priority.", color: "#E94560" },
+              { name: "Enterprise + Voice", price: "$9,500+ setup + $1,297/mo", emoji: "🦞🦞🦞", desc: "Everything + Voice Staff, multi-agent, Elite RAG, Command Center, full security assessment, white-glove 3-session onboarding.", color: "#D4A843" },
+              { name: "VIP Day", price: "$8,000 flat", emoji: "⚡", desc: "Intensive 1-day build. Deep custom. Great for business owners who want me in their systems hands-on.", color: "#AB47BC" },
+              { name: "Live Workshop", price: "$247/seat", emoji: "🎓", desc: "Group teach. Show the system, show the possibilities. Lead gen for Personal + Business installs.", color: "#66BB6A" },
+              { name: "Self-Paced Course", price: "$497", emoji: "📚", desc: "DIY with my frameworks. Gatekeep the actual config — sell the methodology. Funnel into managed clients.", color: "#26C6DA" },
             ].map((o, i) => (
               <div key={i} style={{ display: "flex", gap: "12px", padding: "14px 16px", background: `${o.color}08`, border: `1px solid ${o.color}18`, borderRadius: "10px", alignItems: "flex-start" }}>
                 <span style={{ fontSize: "18px", flexShrink: 0, marginTop: "1px" }}>{o.emoji}</span>
@@ -279,12 +279,12 @@ export default function PlaybookPage() {
           <div style={{ fontSize: "13px", color: "rgba(255,255,255,.55)", lineHeight: 2, marginBottom: "14px" }}>
             <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "8px", marginBottom: "14px" }}>
               {[
-                ["5 Personal clients", "$635/mo retainer (5×$127)"],
-                ["3 Business Pro clients", "$1,191/mo retainer (3×$397)"],
-                ["1 Enterprise client", "$897/mo retainer"],
-                ["Total retainer MRR", "~$2,723/mo (conservative)"],
-                ["+ Setup revenue", "5×$697 + 3×$2,497 + 1×$7,500 = ~$18K"],
-                ["Month 3 MRR target", "$5,000+"],
+                ["5 Personal clients", "$985/mo retainer (5×$197)"],
+                ["3 Business Pro clients", "$1,491/mo retainer (3×$497)"],
+                ["1 Enterprise client", "$1,297/mo retainer"],
+                ["Total retainer MRR", "~$3,773/mo (conservative)"],
+                ["+ Setup revenue", "5×$897 + 3×$2,997 + 1×$9,500 = ~$23K"],
+                ["Month 3 MRR target", "$6,000+"],
               ].map(([k, v], i) => (
                 <div key={i} style={{ background: "rgba(255,255,255,.03)", borderRadius: "8px", padding: "10px 12px" }}>
                   <div style={{ fontSize: "11px", color: "rgba(255,255,255,.3)", marginBottom: "2px" }}>{k}</div>
@@ -350,7 +350,7 @@ export default function PlaybookPage() {
           <div style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
             <div style={{ fontSize: "13px", color: "rgba(255,255,255,.6)", lineHeight: 1.9, background: "rgba(212,168,67,.04)", border: "1px solid rgba(212,168,67,.1)", borderRadius: "8px", padding: "16px" }}>
               <p style={{ marginBottom: "10px" }}>🦞 This project feels right. The market is real. The problem is real. The solution is something I literally live every day — I use OpenClaw for my own work. That authenticity matters.</p>
-              <p style={{ marginBottom: "10px" }}>The pricing feels strong. $697 is accessible for an individual. $2,497 is serious money for a business but the ROI is obvious — one booked appointment pays for the whole setup. Enterprise is completely defensible at $7,500.</p>
+              <p style={{ marginBottom: "10px" }}>The pricing is elite and justified. $897 positions us as premium from day one. $2,997 is serious money for a business but the ROI is obvious — one booked appointment pays for the whole setup. Enterprise is completely defensible at $9,500 — we&apos;re delivering a full AI operation center.</p>
               <p style={{ marginBottom: "10px" }}>The Voice Staff angle is the real moat. Nobody else is combining text + voice AI for the same client. That&apos;s genuinely novel and I should lead with it more aggressively to premium buyers.</p>
               <p>Focus for the next 30 days: get 3 clients through the door. Even at $697 each. Real case studies beat any marketing I can write.</p>
             </div>

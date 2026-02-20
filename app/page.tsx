@@ -765,9 +765,9 @@ Strong opinions about productivity. Push back when needed.
           </ScrollReveal>
           <div style={{ display: "flex", flexWrap: "wrap", gap: "20px", justifyContent: "center", alignItems: "stretch" }}>
             {[
-              { tier: "Personal Claw", price: "$697", mo: "+ $127/mo management (optional)", accent: "#64B5F6", features: ["Full install + 12-point security hardening", "Custom SOUL.md + USER.md identity build", "1-2 channels (WhatsApp + Telegram)", "5 vetted skills installed", "Persistent memory activated", "30-min onboarding call", "Claw Collective community access"] },
-              { tier: "Business Pro", price: "$2,497", mo: "+ $397/mo management (optional)", accent: "#E94560", pop: true, features: ["Everything in Personal, plus:", "Multi-channel + Docker sandbox", "Custom business skills & automations", "Cron jobs & scheduled workflows", "Dedicated VPS + API monitoring", "AGENTS.md + custom .md knowledge files", "60-min strategy + 30 days priority support"] },
-              { tier: "Enterprise + Voice", price: "$7,500+", mo: "+ $897/mo all-inclusive (optional)", accent: "#D4A843", features: ["Everything in Business Pro, plus:", "Voice Staff AI voice agent included", "Multi-agent architecture", "Elite RAG / vector knowledge base", "Command center dashboard", "Full security assessment", "White-glove onboarding (3 sessions)"] },
+              { tier: "Personal Claw", price: "$897", mo: "+ $197/mo management (optional)", accent: "#64B5F6", features: ["Full install + 12-point security hardening", "Custom SOUL.md + USER.md identity build", "1-2 channels (WhatsApp + Telegram)", "5 vetted skills installed", "Persistent memory activated", "30-min onboarding call", "Claw Collective community access"] },
+              { tier: "Business Pro", price: "$2,997", mo: "+ $497/mo management (optional)", accent: "#E94560", pop: true, features: ["Everything in Personal, plus:", "Multi-channel + Docker sandbox", "Custom business skills & automations", "Cron jobs & scheduled workflows", "Dedicated VPS + API monitoring", "AGENTS.md + custom .md knowledge files", "60-min strategy + 30 days priority support"] },
+              { tier: "Enterprise + Voice", price: "$9,500+", mo: "+ $1,297/mo all-inclusive (optional)", accent: "#D4A843", features: ["Everything in Business Pro, plus:", "Voice Staff AI voice agent included", "Multi-agent architecture", "Elite RAG / vector knowledge base", "Command center dashboard", "Full security assessment", "White-glove onboarding (3 sessions)"] },
             ].map((p, i) => (
               <ScrollReveal key={i} delay={i * .08}>
                 <div style={{
@@ -818,9 +818,9 @@ Strong opinions about productivity. Push back when needed.
           <ScrollReveal delay={.3}>
             <p style={{ textAlign: "center", marginTop: "20px", fontSize: "12px", color: "rgba(255,255,255,.3)" }}>
               Also:{" "}
-              <strong style={{ color: "rgba(255,255,255,.5)" }}>VIP Day</strong> ($3,500) •{" "}
-              <strong style={{ color: "rgba(255,255,255,.5)" }}>Live Workshop</strong> ($197/seat) •{" "}
-              <strong style={{ color: "rgba(255,255,255,.5)" }}>Self-Paced Course</strong> ($397)
+              <strong style={{ color: "rgba(255,255,255,.5)" }}>VIP Day</strong> ($8,000) •{" "}
+              <strong style={{ color: "rgba(255,255,255,.5)" }}>Live Workshop</strong> ($247/seat) •{" "}
+              <strong style={{ color: "rgba(255,255,255,.5)" }}>Self-Paced Course</strong> ($497)
             </p>
           </ScrollReveal>
         </div>
@@ -901,7 +901,7 @@ Strong opinions about productivity. Push back when needed.
             <FAQItem q="Is it safe? I've seen the security warnings." a="We lead with honesty. OpenClaw's power comes from system access — same thing that creates risk. We implement a 12-point hardening protocol based on Microsoft, CrowdStrike, and OpenClaw security team guidelines. Every client gets a full risk disclosure before purchase." />
             <FAQItem q="What AI model does it use?" a="Your choice — and you can switch between models anytime with a simple command. We walk you through the options during our discovery call. We help you pick the right fit and configure smart fallback chains so your AI never goes down." />
             <FAQItem q="Can you set this up remotely?" a="Yes — our default is a cloud VPS (DigitalOcean or Hetzner, $4-6/mo). We SSH in, configure everything, manage ongoing. This is actually MORE secure than a personal machine because it's fully isolated." />
-            <FAQItem q="What's Voice Staff?" a="Our AI voice agent platform ($399/mo). It answers phone calls with natural conversation — qualifying leads, booking appointments, handling inquiries. Combined with OpenClaw, you get text + voice AI sharing the same brain." />
+            <FAQItem q="What's Voice Staff?" a="Our AI voice agent platform ($499/mo). It answers phone calls with natural conversation — qualifying leads, booking appointments, handling inquiries. Combined with OpenClaw, you get text + voice AI sharing the same brain." />
             <FAQItem q="How long does setup take?" a="Personal: 2-3 hours. Business Pro: 4-6 hours. Enterprise: 1-2 weeks for full multi-agent architecture. You're up and running fast." />
             <FAQItem q="What if I want to manage it myself?" a="Go for it! After setup, we can configure your Claw to teach YOU how to manage everything. It becomes your personal tutor. Many clients start with management and graduate to self-managing within a few months. Zero lock-in, ever." />
           </div>
