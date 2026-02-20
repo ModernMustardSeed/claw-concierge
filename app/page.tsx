@@ -139,6 +139,57 @@ export default function Home() {
   return (
     <div style={{ background: "#050d1a", color: "white", fontFamily: "'DM Sans', sans-serif", overflowX: "hidden" }}>
 
+      {/* ═══ STICKY NAV ═══ */}
+      <nav style={{
+        position: "fixed", top: 0, left: 0, right: 0, zIndex: 100,
+        display: "flex", alignItems: "center", justifyContent: "space-between",
+        padding: "0 28px", height: "56px",
+        background: "rgba(5,13,26,.85)", backdropFilter: "blur(16px)",
+        borderBottom: "1px solid rgba(255,255,255,.06)",
+      }}>
+        <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
+          <svg viewBox="0 0 400 400" width={22} height={22} style={{ display: "inline-block" }}>
+            <defs><linearGradient id="nl" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stopColor="#FF6B6B"/><stop offset="100%" stopColor="#E94560"/></linearGradient></defs>
+            <ellipse cx="200" cy="220" rx="55" ry="80" fill="url(#nl)"/>
+            <ellipse cx="200" cy="135" rx="42" ry="35" fill="url(#nl)"/>
+            <circle cx="182" cy="118" r="6" fill="#0a1628"/><circle cx="218" cy="118" r="6" fill="#0a1628"/>
+            <path d="M155 160Q100 130 75 115" stroke="url(#nl)" strokeWidth="14" fill="none" strokeLinecap="round"/>
+            <ellipse cx="62" cy="100" rx="25" ry="18" fill="url(#nl)" transform="rotate(-30 62 100)"/>
+            <path d="M245 160Q300 130 325 115" stroke="url(#nl)" strokeWidth="14" fill="none" strokeLinecap="round"/>
+            <ellipse cx="338" cy="100" rx="25" ry="18" fill="url(#nl)" transform="rotate(30 338 100)"/>
+            <ellipse cx="200" cy="295" rx="45" ry="18" fill="#C13048"/>
+            <ellipse cx="200" cy="362" rx="35" ry="14" fill="url(#nl)"/>
+          </svg>
+          <span style={{ fontSize: "13px", fontWeight: 800, fontFamily: "'Playfair Display', serif" }}>The Claw Concierge</span>
+        </div>
+        <div style={{ display: "flex", alignItems: "center", gap: "6px" }}>
+          {[
+            { label: "How It Works", href: "#how" },
+            { label: "Pricing", href: "#pricing" },
+            { label: "🛡️ Guarantee", href: "#guarantee" },
+            { label: "FAQ", href: "#faq" },
+          ].map((l) => (
+            <a key={l.href} href={l.href} style={{
+              fontSize: "12px", color: l.label.includes("Guarantee") ? "#66BB6A" : "rgba(255,255,255,.5)",
+              textDecoration: "none", padding: "6px 12px", borderRadius: "8px",
+              border: l.label.includes("Guarantee") ? "1px solid rgba(102,187,106,.25)" : "1px solid transparent",
+              fontWeight: l.label.includes("Guarantee") ? 700 : 500,
+              transition: "all .2s",
+            }}>
+              {l.label}
+            </a>
+          ))}
+          <a href="#audit" style={{
+            fontSize: "12px", fontWeight: 700, color: "white",
+            background: "linear-gradient(135deg,#E94560,#FF6B6B)",
+            textDecoration: "none", padding: "7px 16px", borderRadius: "8px",
+            marginLeft: "4px",
+          }}>
+            Book Free Audit →
+          </a>
+        </div>
+      </nav>
+
       {/* ═══ 1. HERO ═══ */}
       <section style={{
         minHeight: "100vh", position: "relative", display: "flex", alignItems: "center", justifyContent: "center", overflow: "hidden",
@@ -847,11 +898,11 @@ Strong opinions about productivity. Push back when needed.
                   The Claw Guarantee
                 </div>
                 <h2 style={{ fontSize: "clamp(24px,4vw,36px)", fontFamily: "'Playfair Display', serif", fontWeight: 900, lineHeight: 1.2, marginBottom: "16px" }}>
-                  Your AI is live in 48 hours.<br />
+                  Your AI is live in 72 hours.<br />
                   <span style={{ color: "#66BB6A" }}>Or you don&apos;t pay.</span>
                 </h2>
                 <p style={{ fontSize: "15px", color: "rgba(255,255,255,.55)", lineHeight: 1.8, maxWidth: "560px", margin: "0 auto 28px" }}>
-                  We&apos;ve done this enough times to be certain. Our 9-phase SOP and 12-point security protocol make the outcome predictable. The risk is ours — not yours.
+                  We&apos;ve done this enough times to be certain. Our 9-phase SOP and 12-point security protocol make the outcome predictable — even at full capacity. The risk is ours — not yours.
                 </p>
                 <div style={{ display: "flex", flexWrap: "wrap", gap: "10px", justifyContent: "center", marginBottom: "28px" }}>
                   {[
