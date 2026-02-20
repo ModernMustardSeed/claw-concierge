@@ -20,6 +20,7 @@ const MENU_ITEMS = [
   { label: "🛡️ Guarantee", href: "#guarantee", icon: "" },
   { label: "Community", href: "#community", icon: "🦞" },
   { label: "FAQ", href: "#faq", icon: "❓" },
+  { label: "Whitepaper", href: "/whitepaper", icon: "📄" },
   { label: "Client Portal", href: "/clientportal", icon: "🔑" },
 ];
 
@@ -288,6 +289,23 @@ export default function Home() {
               >
                 📅 Book Your Free Audit →
               </a>
+            </div>
+
+            {/* Social links */}
+            <div style={{ marginTop: "20px", display: "flex", gap: "10px", justifyContent: "center" }}>
+              {[
+                { label: "𝕏 @sarahmscarano", href: "https://x.com/sarahmscarano" },
+                { label: "𝕏 @clawconcierge", href: "https://x.com/clawconcierge" },
+              ].map(s => (
+                <a key={s.href} href={s.href} target="_blank" rel="noopener noreferrer"
+                  onClick={() => setMenuOpen(false)}
+                  style={{ padding: "9px 16px", borderRadius: "10px", background: "rgba(255,255,255,.04)", border: "1px solid rgba(255,255,255,.09)", color: "rgba(255,255,255,.5)", textDecoration: "none", fontSize: "13px", fontWeight: 700, fontFamily: "'DM Sans', sans-serif", transition: "all .15s" }}
+                  onMouseEnter={e => { (e.currentTarget as HTMLElement).style.color = "white"; (e.currentTarget as HTMLElement).style.background = "rgba(255,255,255,.08)"; }}
+                  onMouseLeave={e => { (e.currentTarget as HTMLElement).style.color = "rgba(255,255,255,.5)"; (e.currentTarget as HTMLElement).style.background = "rgba(255,255,255,.04)"; }}
+                >
+                  {s.label}
+                </a>
+              ))}
             </div>
           </div>
         </div>
@@ -1168,18 +1186,36 @@ Strong opinions about productivity. Push back when needed.
       <WebsiteBrain />
 
       {/* ═══ FOOTER ═══ */}
-      <footer style={{ padding: "40px 24px", borderTop: "1px solid rgba(255,255,255,.04)", background: "#050d1a" }}>
-        <div style={{ maxWidth: "800px", margin: "0 auto", textAlign: "center" }}>
-          <div style={{ marginBottom: "12px" }}><Lobster s={28} id="footLob" /></div>
-          <div style={{ fontSize: "11px", color: "rgba(255,255,255,.22)", lineHeight: 2 }}>
-            <span style={{ color: "#D4A843", fontWeight: 600 }}>The Claw Concierge</span> • by Modern Mustard Seed • Kalispell, Montana<br />
-            OpenClaw Setup & Management • Voice Staff AI Voice Agents • The Claw Collective<br />
-            <span style={{ fontSize: "10px" }}>
-              <a href="https://modernmustardseed.com" target="_blank" rel="noopener noreferrer" style={{ color: "rgba(255,255,255,.35)", textDecoration: "none", borderBottom: "1px solid rgba(255,255,255,.1)" }}>modernmustardseed.com</a>
-              {" "}•{" "}
-              <a href="https://voicestaff.pro" target="_blank" rel="noopener noreferrer" style={{ color: "rgba(255,255,255,.35)", textDecoration: "none", borderBottom: "1px solid rgba(255,255,255,.1)" }}>voicestaff.pro</a>
-              {" "}• Built with 🦞 and faith
-            </span>
+      <footer style={{ padding: "52px 24px 40px", borderTop: "1px solid rgba(255,255,255,.04)", background: "#050d1a" }}>
+        <div style={{ maxWidth: "860px", margin: "0 auto" }}>
+          {/* Social links row */}
+          <div style={{ display: "flex", justifyContent: "center", flexWrap: "wrap", gap: "10px", marginBottom: "28px" }}>
+            {[
+              { label: "𝕏 @sarahmscarano", href: "https://x.com/sarahmscarano", note: "Sarah's personal" },
+              { label: "𝕏 @clawconcierge", href: "https://x.com/clawconcierge", note: "The Claw" },
+              { label: "📄 Whitepaper", href: "/whitepaper", note: "What is this?" },
+              { label: "🔑 Client Portal", href: "/clientportal", note: "VIP clients" },
+              { label: "modernmustardseed.com", href: "https://modernmustardseed.com", note: "The mothership" },
+            ].map((l, i) => (
+              <a key={i} href={l.href} target={l.href.startsWith("http") ? "_blank" : undefined} rel={l.href.startsWith("http") ? "noopener noreferrer" : undefined}
+                style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: "2px", padding: "10px 16px", borderRadius: "10px", background: "rgba(255,255,255,.03)", border: "1px solid rgba(255,255,255,.07)", textDecoration: "none", transition: "all .15s" }}
+                onMouseEnter={e => { (e.currentTarget as HTMLElement).style.background = "rgba(255,255,255,.06)"; (e.currentTarget as HTMLElement).style.borderColor = "rgba(233,69,96,.25)"; }}
+                onMouseLeave={e => { (e.currentTarget as HTMLElement).style.background = "rgba(255,255,255,.03)"; (e.currentTarget as HTMLElement).style.borderColor = "rgba(255,255,255,.07)"; }}
+              >
+                <span style={{ fontSize: "12px", fontWeight: 700, color: "rgba(255,255,255,.6)" }}>{l.label}</span>
+                <span style={{ fontSize: "9px", color: "rgba(255,255,255,.25)", letterSpacing: "1px", textTransform: "uppercase" }}>{l.note}</span>
+              </a>
+            ))}
+          </div>
+
+          {/* Bottom line */}
+          <div style={{ textAlign: "center" }}>
+            <div style={{ marginBottom: "10px" }}><Lobster s={24} id="footLob" /></div>
+            <div style={{ fontSize: "11px", color: "rgba(255,255,255,.18)", lineHeight: 2 }}>
+              <span style={{ color: "#D4A843", fontWeight: 600 }}>The Claw Concierge</span> · by Modern Mustard Seed · Kalispell, Montana<br />
+              OpenClaw Setup & Management · Voice Staff AI Voice Agents · The Claw Collective<br />
+              Built with 🦞 and faith
+            </div>
           </div>
         </div>
       </footer>
