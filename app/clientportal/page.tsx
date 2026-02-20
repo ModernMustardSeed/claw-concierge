@@ -94,7 +94,7 @@ export default function ClientPortal() {
       <div style={{ textAlign: "center", position: "relative", zIndex: 10, width: "100%", maxWidth: "420px" }}>
 
         {/* Hugging lobsters */}
-        <div style={{ marginBottom: "-30px", filter: "drop-shadow(0 20px 40px rgba(233,69,96,.15))" }}>
+        <div style={{ marginBottom: "16px", filter: "drop-shadow(0 20px 40px rgba(233,69,96,.15))" }}>
           <DuoLobsters size={220} />
         </div>
 
