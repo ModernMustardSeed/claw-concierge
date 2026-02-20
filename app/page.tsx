@@ -30,13 +30,90 @@ export default function Home() {
   }, []);
 
   const cases = [
-    { i: "🏢", t: "Real Estate", d: "Voice Staff answers calls & books showings. OpenClaw sends property sheets, updates CRM, drafts follow-ups. Memory tracks every client preference: \"Sarah prefers ranch-style, budget $450K, 3+ beds.\"", c: "#E94560" },
-    { i: "⚖️", t: "Law Firm", d: "OpenClaw qualifies prospects via WhatsApp 24/7, routes leads to attorneys. Voice Staff handles after-hours calls. SOUL.md configured with guardrails: \"NEVER give legal advice.\"", c: "#64B5F6" },
-    { i: "🎨", t: "Content Creator", d: "Monitors trends, drafts posts in YOUR voice, schedules content, manages DMs and brand deals. Cron job runs each morning: check trends → draft 3 options → send to Telegram for approval.", c: "#D4A843" },
-    { i: "🛒", t: "E-Commerce", d: "Customer asks about an order on WhatsApp? OpenClaw checks Shopify, finds tracking, responds in seconds. At 3am. On Sunday. Voice Staff handles phone inquiries with natural conversation.", c: "#66BB6A" },
-    { i: "💻", t: "Developer", d: "Runs shell commands, manages repos, opens PRs, monitors deployments, Slack alerts on build failures. Cron jobs check server health every 30 minutes. Your DevOps co-pilot that never sleeps.", c: "#AB47BC" },
-    { i: "🏥", t: "Medical", d: "Voice Staff schedules and reschedules appointments with empathy. OpenClaw sends WhatsApp reminders, manages the waitlist, confirms insurance, routes urgent messages to the doctor.", c: "#26C6DA" },
-    { i: "🏠", t: "Homemaker", d: "Your household has a COO. Meal planning from pantry inventory, weekly grocery orders auto-sent to Instacart, family calendar synced to every member, school event reminders with prep-time alerts, contractor scheduling, birthday reminders with gift suggestions already researched, household budget tracked and flagged when off. Your home runs like a business.", c: "#FF8A65" },
+    {
+      i: "🏢", t: "Real Estate", c: "#E94560",
+      tagline: "Never miss a lead. Never repeat yourself.",
+      bullets: [
+        "Answers every WhatsApp/SMS inquiry instantly — qualifies budget, timeline, and must-haves before you know they exist",
+        "Sends property sheets, photos, and comps the moment a lead shows interest — zero delay, zero manual work",
+        "Books showings directly into your calendar and sends confirmations automatically",
+        "Updates your CRM after every interaction — OpenClaw writes the notes so you never have to",
+        "Remembers every client preference forever: style, budget, school district, deal-breakers",
+      ],
+      example: "New inquiry at 10pm Sunday: 'Interested in 123 Maple.' 60 seconds later: property sheet sent, availability confirmed, showing booked Tuesday at 10am. You wake up to a done deal.",
+    },
+    {
+      i: "⚖️", t: "Law Firm", c: "#64B5F6",
+      tagline: "Available 24/7. Qualified. Compliant. Always.",
+      bullets: [
+        "Qualifies every inbound inquiry: practice area match, jurisdiction, conflict check, and budget range — before a human touches it",
+        "Routes urgent matters to the right attorney with full intake context before they pick up the phone",
+        "Voice Staff handles after-hours calls with empathy and precision — no lead lost to voicemail",
+        "SOUL.md enforced guardrails: 'NEVER give legal advice. Warm referral only. Collect full contact info.'",
+        "Sends intake forms, follows up on incomplete submissions, tracks the full consultation pipeline",
+      ],
+      example: "A DUI inquiry comes in at 2am. OpenClaw collects name, incident date, jurisdiction, and prior record. Attorney wakes up to a fully qualified lead with intake notes — ready for a 9am call.",
+    },
+    {
+      i: "🎨", t: "Content Creator", c: "#D4A843",
+      tagline: "Your creative output, multiplied. Your voice, preserved.",
+      bullets: [
+        "Monitors trending topics across YouTube, X, Reddit, and your niche daily — delivers a morning brief to Telegram",
+        "Drafts posts, captions, scripts, and threads in YOUR exact voice, style, and vocabulary — not generic AI speak",
+        "Manages DM pipeline: brand deal inquiries tagged and flagged, fan messages responded to warmly, spam filtered",
+        "Runs your content calendar: schedules posts, tracks deadlines, reminds you what's performing",
+        "Repurposes content across formats — YouTube script becomes Twitter thread becomes newsletter intro",
+      ],
+      example: "You wake up and approve 3 draft posts with a single thumb tap in Telegram. By 9am they're scheduled across Instagram, X, and LinkedIn. Your brand posted without you opening a single app.",
+    },
+    {
+      i: "🛒", t: "E-Commerce", c: "#66BB6A",
+      tagline: "Customer support at 3am. Returns handled. Revenue protected.",
+      bullets: [
+        "Checks Shopify in real-time: order status, tracking numbers, inventory levels — answers in seconds on WhatsApp",
+        "Handles returns, refunds, and exchanges with your exact policy, your tone, and zero wait time",
+        "Voice Staff takes phone inquiries: order lookups, delivery concerns, product questions — natural conversation",
+        "Abandoned cart recovery: personalized follow-up messages with a direct checkout link sent at the right time",
+        "Flags anomalies before they hurt: sudden inventory drop, failed payment batch, negative review spike",
+      ],
+      example: "Sunday 3am: 'Where's my order?' OpenClaw pulls the Shopify record, finds the delayed tracking, responds with empathy and the carrier link. Customer satisfied. You slept through it.",
+    },
+    {
+      i: "💻", t: "Developer", c: "#AB47BC",
+      tagline: "Your DevOps co-pilot. Wired in. Never sleeps.",
+      bullets: [
+        "Monitors server health every 30 minutes — alerts you to downtime before your users notice and lose trust",
+        "Opens PRs, reviews code changes, creates GitHub issues, cleans up merged branches automatically",
+        "Executes shell commands, runs scripts, manages deployments via CI/CD hooks — real system access, sandboxed safely",
+        "Reads error logs, identifies root cause, drafts the fix description — you just review and merge",
+        "Triages Slack alerts: build failures, Sentry errors, Datadog anomalies — prioritized before they hit your eyes",
+      ],
+      example: "3am: Production API latency spikes. OpenClaw detects it via health check, identifies the slow DB query in logs, pings Telegram with full context and a suggested fix. You merge from your phone.",
+    },
+    {
+      i: "🏥", t: "Medical", c: "#26C6DA",
+      tagline: "Patient experience elevated. Staff time reclaimed.",
+      bullets: [
+        "Schedules, reschedules, and confirms appointments via WhatsApp — patients love the convenience, staff love the freedom",
+        "Voice Staff handles inbound calls with calm, compliant, empathetic responses — HIPAA-aware guardrails built in",
+        "Manages the waitlist intelligently: a slot opens → most urgent waitlisted patient notified first, automatically",
+        "Sends multi-step reminder sequences: 48hr, 24hr, 2hr — reduces no-shows without a single staff action",
+        "Routes urgent patient messages to the on-call physician with full context before they pick up",
+      ],
+      example: "Patient cancels at 7pm. OpenClaw messages the #2 on the waitlist, confirms the new slot, updates the schedule, sends both patients confirmation — all before staff clocks in tomorrow morning.",
+    },
+    {
+      i: "🏠", t: "Homemaker", c: "#FF8A65",
+      tagline: "Your home runs like a business. You run your life.",
+      bullets: [
+        "Builds weekly meal plans from pantry inventory, generates the grocery list, and places the Instacart order automatically",
+        "Manages the full family calendar: school events, appointments, activities — synced to everyone, reminders sent",
+        "Tracks household budget by category, flags when spending is off, sends a clean monthly summary",
+        "Schedules contractors, follows up on quotes, confirms service appointments — no more chasing",
+        "Remembers every birthday, researches gift ideas within your budget, reminds you 2 weeks ahead",
+      ],
+      example: "Monday morning brief in Telegram: 3 school events this week, dentist Thursday 2pm (reminder set), grocery order placed for Tuesday delivery, Jake's birthday in 12 days — 3 gift ideas under $40 attached.",
+    },
   ];
 
   const times = [
@@ -401,14 +478,55 @@ export default function Home() {
           </ScrollReveal>
           <ScrollReveal delay={.15}>
             <div style={{
-              background: "rgba(10,22,40,.6)", border: `1px solid ${cases[uc].c}20`,
-              borderRadius: "18px", padding: "32px 28px", transition: "all .4s", minHeight: "130px",
+              background: "rgba(10,22,40,.6)", border: `1px solid ${cases[uc].c}22`,
+              borderRadius: "20px", padding: "30px 28px", transition: "all .35s",
             }}>
-              <div style={{ display: "flex", alignItems: "center", gap: "12px", marginBottom: "12px" }}>
-                <span style={{ fontSize: "34px" }}>{cases[uc].i}</span>
-                <h3 style={{ fontSize: "20px", fontFamily: "'Playfair Display', serif", fontWeight: 700 }}>{cases[uc].t}</h3>
+              {/* Header */}
+              <div style={{ display: "flex", alignItems: "center", gap: "14px", marginBottom: "6px" }}>
+                <div style={{
+                  width: "54px", height: "54px", borderRadius: "14px", flexShrink: 0,
+                  display: "flex", alignItems: "center", justifyContent: "center", fontSize: "28px",
+                  background: `${cases[uc].c}12`, border: `1px solid ${cases[uc].c}28`,
+                }}>
+                  {cases[uc].i}
+                </div>
+                <div>
+                  <h3 style={{ fontSize: "20px", fontFamily: "'Playfair Display', serif", fontWeight: 700, lineHeight: 1.2 }}>{cases[uc].t}</h3>
+                  <p style={{ fontSize: "12.5px", color: cases[uc].c, fontWeight: 600, marginTop: "2px" }}>{cases[uc].tagline}</p>
+                </div>
               </div>
-              <p style={{ fontSize: "14px", color: "rgba(255,255,255,.55)", lineHeight: 1.85 }}>{cases[uc].d}</p>
+
+              <div style={{ height: "1px", background: `linear-gradient(90deg, ${cases[uc].c}30, transparent)`, margin: "18px 0" }} />
+
+              {/* 2-col body */}
+              <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "24px" }}>
+                {/* Bullets */}
+                <div>
+                  <div style={{ fontSize: "10px", fontWeight: 700, letterSpacing: "2px", color: "rgba(255,255,255,.3)", textTransform: "uppercase", marginBottom: "12px" }}>What your AI handles</div>
+                  <div style={{ display: "flex", flexDirection: "column", gap: "9px" }}>
+                    {cases[uc].bullets.map((b, i) => (
+                      <div key={i} style={{ display: "flex", gap: "10px", alignItems: "flex-start" }}>
+                        <div style={{ width: "5px", height: "5px", borderRadius: "50%", background: cases[uc].c, flexShrink: 0, marginTop: "7px" }} />
+                        <span style={{ fontSize: "12.5px", color: "rgba(255,255,255,.58)", lineHeight: 1.7 }}>{b}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Example */}
+                <div style={{ display: "flex", flexDirection: "column" }}>
+                  <div style={{ fontSize: "10px", fontWeight: 700, letterSpacing: "2px", color: "rgba(255,255,255,.3)", textTransform: "uppercase", marginBottom: "12px" }}>In the wild</div>
+                  <div style={{
+                    flex: 1, background: `${cases[uc].c}07`, border: `1px solid ${cases[uc].c}18`,
+                    borderRadius: "14px", padding: "18px 16px",
+                  }}>
+                    <div style={{ fontSize: "18px", marginBottom: "8px" }}>🦞</div>
+                    <p style={{ fontSize: "13px", color: "rgba(255,255,255,.6)", lineHeight: 1.8, fontStyle: "italic" }}>
+                      &ldquo;{cases[uc].example}&rdquo;
+                    </p>
+                  </div>
+                </div>
+              </div>
             </div>
           </ScrollReveal>
         </div>
