@@ -69,29 +69,41 @@ export default function Home() {
         minHeight: "100vh", position: "relative", display: "flex", alignItems: "center", justifyContent: "center", overflow: "hidden",
         background: "radial-gradient(ellipse 80% 50% at 50% 100%,rgba(0,50,100,.35) 0%,transparent 60%),radial-gradient(ellipse 50% 40% at 25% 80%,rgba(0,80,120,.2) 0%,transparent 50%),linear-gradient(180deg,#050d1a,#0a1e3d 40%,#0d2847 70%,#0a1628)",
       }}>
-        {/* ── Moon — upper left, big, soft glow ── */}
+        {/* ── Moon — upper left, glowing ── */}
         <div style={{
           position: "absolute",
           top: "6%",
           left: "4%",
-          width: "200px",
-          height: "200px",
+          width: "210px",
+          height: "210px",
           borderRadius: "50%",
-          background: "radial-gradient(circle at 36% 36%, rgba(210,228,255,0.13) 0%, rgba(140,170,255,0.07) 38%, rgba(80,110,200,0.03) 60%, transparent 78%)",
-          border: "1px solid rgba(200,220,255,0.07)",
-          boxShadow: "0 0 70px 24px rgba(90,120,210,0.08), 0 0 140px 50px rgba(90,120,210,0.04)",
+          background: [
+            "radial-gradient(circle at 34% 34%, rgba(230,240,255,0.28) 0%, rgba(180,205,255,0.14) 28%, rgba(130,160,240,0.07) 52%, transparent 72%)",
+          ].join(", "),
+          border: "1px solid rgba(200,220,255,0.12)",
+          animation: "moonGlow 5s ease-in-out infinite",
           pointerEvents: "none",
         }} />
-        {/* Moon surface detail — faint inner craters/tone */}
+        {/* Moon highlight — bright crescent gleam top-left */}
         <div style={{
           position: "absolute",
-          top: "calc(6% + 28px)",
-          left: "calc(4% + 22px)",
-          width: "80px",
-          height: "80px",
+          top: "calc(6% + 18px)",
+          left: "calc(4% + 16px)",
+          width: "70px",
+          height: "70px",
           borderRadius: "50%",
-          background: "radial-gradient(circle at 40% 40%, rgba(200,220,255,0.05), transparent 70%)",
-          border: "1px solid rgba(200,220,255,0.04)",
+          background: "radial-gradient(circle at 42% 42%, rgba(240,248,255,0.18), transparent 65%)",
+          pointerEvents: "none",
+        }} />
+        {/* Moon haze — wide soft bloom behind */}
+        <div style={{
+          position: "absolute",
+          top: "calc(6% - 40px)",
+          left: "calc(4% - 40px)",
+          width: "290px",
+          height: "290px",
+          borderRadius: "50%",
+          background: "radial-gradient(circle at 50% 50%, rgba(110,140,230,0.07), transparent 65%)",
           pointerEvents: "none",
         }} />
 
@@ -772,11 +784,6 @@ Strong opinions about productivity. Push back when needed.
               <a href="https://voicestaff.pro" target="_blank" rel="noopener noreferrer" style={{ color: "rgba(255,255,255,.35)", textDecoration: "none", borderBottom: "1px solid rgba(255,255,255,.1)" }}>voicestaff.pro</a>
               {" "}• Built with 🦞 and faith
             </span>
-            <div style={{ marginTop: "14px" }}>
-              <a href="/playbook" style={{ fontSize: "11px", color: "#D4A843", textDecoration: "none", border: "1px solid rgba(212,168,67,.25)", borderRadius: "6px", padding: "5px 14px", letterSpacing: "1px" }}>
-                🦞 Project Playbook →
-              </a>
-            </div>
           </div>
         </div>
       </footer>
