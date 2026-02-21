@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 290" fill="none">
+
+  <!-- ANTENNAE (long pair) -->
+  <path d="M118 58 Q152 28 188 10" stroke="#C03020" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+  <path d="M102 58 Q68 28 32 10" stroke="#C03020" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+  <!-- ANTENNULES (short pair) -->
+  <path d="M116 60 Q132 48 144 45" stroke="#C03020" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+  <path d="M104 60 Q88 48 76 45" stroke="#C03020" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+
+  <!-- ROSTRUM (spike) -->
+  <polygon points="110,34 105,54 115,54" fill="#C03020"/>
+
+  <!-- RIGHT CLAW ARM -->
+  <path d="M133,94 Q162,74 172,57" stroke="#D03828" stroke-width="13" fill="none" stroke-linecap="round"/>
+  <!-- Right claw upper pincer -->
+  <path d="M172,57 Q190,40 196,50 Q192,62 181,61 L172,57" fill="#D03828"/>
+  <!-- Right claw lower pincer -->
+  <path d="M172,57 L181,61 Q184,72 175,73 Q164,71 162,62 Z" fill="#B02818"/>
+
+  <!-- LEFT CLAW ARM -->
+  <path d="M87,94 Q58,74 48,57" stroke="#D03828" stroke-width="13" fill="none" stroke-linecap="round"/>
+  <!-- Left claw upper pincer -->
+  <path d="M48,57 Q30,40 24,50 Q28,62 39,61 L48,57" fill="#D03828"/>
+  <!-- Left claw lower pincer -->
+  <path d="M48,57 L39,61 Q36,72 45,73 Q56,71 58,62 Z" fill="#B02818"/>
+
+  <!-- HEAD -->
+  <ellipse cx="110" cy="76" rx="27" ry="23" fill="#E04030"/>
+  <ellipse cx="110" cy="70" rx="16" ry="11" fill="#EE5540" opacity="0.45"/>
+
+  <!-- RIGHT EYE STALK + EYE -->
+  <line x1="124" y1="64" x2="135" y2="57" stroke="#B02818" stroke-width="3" stroke-linecap="round"/>
+  <circle cx="137" cy="55" r="5.5" fill="#100808"/>
+  <circle cx="138" cy="54" r="2" fill="#333"/>
+
+  <!-- LEFT EYE STALK + EYE -->
+  <line x1="96" y1="64" x2="85" y2="57" stroke="#B02818" stroke-width="3" stroke-linecap="round"/>
+  <circle cx="83" cy="55" r="5.5" fill="#100808"/>
+  <circle cx="84" cy="54" r="2" fill="#333"/>
+
+  <!-- BODY (carapace) -->
+  <ellipse cx="110" cy="130" rx="30" ry="43" fill="#E04030"/>
+  <ellipse cx="110" cy="118" rx="16" ry="22" fill="#EE5540" opacity="0.35"/>
+
+  <!-- RIGHT WALKING LEGS (4 pairs) -->
+  <path d="M138,112 L170,103" stroke="#C03020" stroke-width="3.5" stroke-linecap="round"/>
+  <path d="M140,126 L173,122" stroke="#C03020" stroke-width="3.5" stroke-linecap="round"/>
+  <path d="M139,139 L171,138" stroke="#C03020" stroke-width="3.5" stroke-linecap="round"/>
+  <path d="M136,152 L167,155" stroke="#C03020" stroke-width="3.5" stroke-linecap="round"/>
+
+  <!-- LEFT WALKING LEGS (4 pairs) -->
+  <path d="M82,112 L50,103" stroke="#C03020" stroke-width="3.5" stroke-linecap="round"/>
+  <path d="M80,126 L47,122" stroke="#C03020" stroke-width="3.5" stroke-linecap="round"/>
+  <path d="M81,139 L49,138" stroke="#C03020" stroke-width="3.5" stroke-linecap="round"/>
+  <path d="M84,152 L53,155" stroke="#C03020" stroke-width="3.5" stroke-linecap="round"/>
+
+  <!-- ABDOMEN SEGMENTS (5, tapering) -->
+  <ellipse cx="110" cy="182" rx="21" ry="9" fill="#D83828"/>
+  <ellipse cx="110" cy="198" rx="18" ry="8" fill="#D03020"/>
+  <ellipse cx="110" cy="212" rx="15" ry="7" fill="#C82818"/>
+  <ellipse cx="110" cy="224" rx="13" ry="6" fill="#C02010"/>
+  <ellipse cx="110" cy="235" rx="10" ry="5" fill="#B81808"/>
+
+  <!-- TAIL FAN (5 segments) -->
+  <ellipse cx="78"  cy="256" rx="19" ry="9" fill="#C03020" transform="rotate(-28,78,256)"/>
+  <ellipse cx="95"  cy="263" rx="20" ry="9" fill="#C83020" transform="rotate(-12,95,263)"/>
+  <ellipse cx="110" cy="265" rx="20" ry="9" fill="#C83020"/>
+  <ellipse cx="125" cy="263" rx="20" ry="9" fill="#C83020" transform="rotate(12,125,263)"/>
+  <ellipse cx="142" cy="256" rx="19" ry="9" fill="#C03020" transform="rotate(28,142,256)"/>
+
+</svg>

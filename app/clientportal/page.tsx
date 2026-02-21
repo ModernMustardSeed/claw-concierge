@@ -601,7 +601,7 @@ export default function ClientPortal() {
       <div style={{ width: collapsed ? "60px" : "210px", flexShrink: 0, background: "rgba(5,10,22,.98)", borderRight: "1px solid rgba(255,255,255,.06)", display: "flex", flexDirection: "column", transition: "width .25s ease", overflow: "hidden" }}>
         {/* Logo */}
         <div style={{ padding: collapsed ? "16px 12px" : "20px 18px", borderBottom: "1px solid rgba(255,255,255,.05)", display: "flex", alignItems: "center", gap: "10px" }}>
-          <span style={{ fontSize: "22px", flexShrink: 0 }}>🦞</span>
+          <img src="/lobster.svg" alt="The Claw" width={26} height={26} style={{ display: "block", flexShrink: 0 }} />
           {!collapsed && (
             <div>
               <div style={{ fontSize: "11px", fontWeight: 800, fontFamily: "'Playfair Display', serif", lineHeight: 1.2 }}>Client Portal</div>

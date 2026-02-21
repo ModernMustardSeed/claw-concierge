@@ -204,7 +204,7 @@ export default function WebsiteBrain() {
             fontSize: "28px", transition: "all .2s",
           }}
         >
-          {open ? <span style={{ fontSize: "20px", color: "#E94560", fontWeight: 700 }}>✕</span> : "🦞"}
+          {open ? <span style={{ fontSize: "20px", color: "#E94560", fontWeight: 700 }}>✕</span> : <img src="/lobster.svg" alt="LouLou" width={32} height={32} style={{ display: "block" }} />}
         </button>
       </div>
 
@@ -226,7 +226,7 @@ export default function WebsiteBrain() {
             display: "flex", alignItems: "center", gap: "10px",
             background: "rgba(233,69,96,.04)",
           }}>
-            <div style={{ fontSize: "22px", lineHeight: 1 }}>🦞</div>
+            <img src="/lobster.svg" alt="LouLou" width={28} height={28} style={{ display: "block", flexShrink: 0 }} />
             <div style={{ flex: 1 }}>
               <div style={{ fontSize: "13px", fontWeight: 700 }}>LouLou</div>
               <div style={{
