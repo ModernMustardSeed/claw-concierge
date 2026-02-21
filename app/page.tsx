@@ -438,6 +438,38 @@ export default function Home() {
         </div>
       </div>
 
+      {/* ═══ 2.5 VIDEO SPOTLIGHT ═══ */}
+      <section style={{ padding: "72px 24px", background: "#050d1a" }}>
+        <div style={{ maxWidth: "460px", margin: "0 auto", textAlign: "center" }}>
+          <div style={{ fontSize: "11px", fontWeight: 700, letterSpacing: "4px", color: "#E94560", textTransform: "uppercase", marginBottom: "10px" }}>
+            The Claw in Action
+          </div>
+          <h2 style={{ fontSize: "clamp(22px,4vw,36px)", fontFamily: "'Playfair Display', serif", fontWeight: 800, marginBottom: "28px", lineHeight: 1.2 }}>
+            See what AI done right actually looks like
+          </h2>
+          <div style={{
+            position: "relative",
+            borderRadius: "20px",
+            overflow: "hidden",
+            border: "1px solid rgba(233,69,96,.2)",
+            boxShadow: "0 0 60px rgba(233,69,96,.12), 0 24px 48px rgba(0,0,0,.6)",
+          }}>
+            <video
+              src="https://tempfile.aiquickdraw.com/v/11666c8c825a15683b82859ce1434b63_1771645100.mp4"
+              autoPlay
+              muted
+              loop
+              playsInline
+              controls
+              style={{ width: "100%", display: "block", borderRadius: "20px" }}
+            />
+          </div>
+          <p style={{ marginTop: "16px", fontSize: "13px", color: "rgba(255,255,255,.35)", fontStyle: "italic" }}>
+            Your AI doesn&apos;t just assist. It elevates.
+          </p>
+        </div>
+      </section>
+
       {/* ═══ 3. WHAT MAKES OPENCLAW SPECIAL ═══ */}
       <section style={sec}><div style={mx}>
         <ScrollReveal>
