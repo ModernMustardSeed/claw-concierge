@@ -13,7 +13,7 @@ interface ClientProfile {
   referralCode: string;
 }
 
-type PortalSection = "home" | "progress" | "soul" | "resources" | "support" | "plan";
+type PortalSection = "home" | "progress" | "soul" | "resources" | "support" | "plan" | "myclaw";
 
 // ─── Config ───────────────────────────────────────────────────────────────────
 const ACCESS_CODE = "THECLAW2026";
@@ -85,6 +85,7 @@ const NAV: { id: PortalSection; icon: string; label: string; color: string }[] =
   { id: "resources", icon: "📚", label: "Resources",      color: "#D4A843" },
   { id: "support",   icon: "💬", label: "Support",        color: "#66BB6A" },
   { id: "plan",      icon: "💰", label: "My Plan",        color: "#E94560" },
+  { id: "myclaw",    icon: "🦞", label: "My Claw",        color: "#FF6B6B" },
 ];
 
 // ─── Stars ───────────────────────────────────────────────────────────────────
@@ -455,6 +456,38 @@ function PlanTab({ client, setClient }: { client: ClientProfile; setClient: (c: 
   );
 }
 
+// ─── My Claw Tab ─────────────────────────────────────────────────────────────
+function MyClawTab({ client }: { client: ClientProfile }) {
+  const CLAW_URL = `https://claw-concierge-pi.vercel.app/clientportal`;
+  return (
+    <div style={{ padding: "28px 32px", height: "calc(100vh - 56px)", display: "flex", flexDirection: "column", gap: "16px" }}>
+      <div>
+        <h2 style={{ fontSize: "20px", fontFamily: "'Playfair Display', serif", fontWeight: 800, marginBottom: "4px" }}>
+          My Claw 🦞
+        </h2>
+        <p style={{ fontSize: "13px", color: "rgba(255,255,255,.4)" }}>
+          Hey {client.name} — your full Claw portal is right here. Everything in one place.
+        </p>
+      </div>
+      <div style={{ display: "flex", gap: "10px", flexWrap: "wrap" }}>
+        <a href={CLAW_URL} target="_blank" rel="noopener noreferrer" style={{ padding: "9px 18px", background: "rgba(233,69,96,.15)", border: "1px solid rgba(233,69,96,.25)", borderRadius: "9px", color: "#E94560", fontSize: "12px", fontWeight: 700, textDecoration: "none" }}>
+          Open in new tab ↗
+        </a>
+        <a href="https://claw-concierge-pi.vercel.app" target="_blank" rel="noopener noreferrer" style={{ padding: "9px 18px", background: "rgba(255,255,255,.05)", border: "1px solid rgba(255,255,255,.08)", borderRadius: "9px", color: "rgba(255,255,255,.5)", fontSize: "12px", fontWeight: 700, textDecoration: "none" }}>
+          Main website ↗
+        </a>
+      </div>
+      <div style={{ flex: 1, borderRadius: "16px", overflow: "hidden", border: "1px solid rgba(233,69,96,.15)", background: "#050d1a" }}>
+        <iframe
+          src={CLAW_URL}
+          style={{ width: "100%", height: "100%", border: "none" }}
+          title="My Claw Portal"
+        />
+      </div>
+    </div>
+  );
+}
+
 // ─────────────────────────────────────────────────────────────────────────────
 //  MAIN PAGE
 // ─────────────────────────────────────────────────────────────────────────────
@@ -667,6 +700,7 @@ export default function ClientPortal() {
           {section === "resources" && <ResourcesTab />}
           {section === "support"   && <SupportTab client={client} />}
           {section === "plan"      && <PlanTab client={client} setClient={c => { setClient(c); localStorage.setItem("claw-portal-client", JSON.stringify(c)); }} />}
+          {section === "myclaw"    && <MyClawTab client={client} />}
         </div>
       </div>
     </div>
