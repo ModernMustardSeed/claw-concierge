@@ -1,7 +1,7 @@
 import { ReactNode } from "react";
 
 interface SectionHeaderProps {
-  tag?: string;
+  tag?: ReactNode;
   title: ReactNode;
   sub?: string;
 }

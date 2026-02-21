@@ -380,20 +380,24 @@ export default function Home() {
           <h1 style={{
             fontSize: "clamp(34px,6.5vw,74px)", fontWeight: 900,
             fontFamily: "'Playfair Display', serif", lineHeight: 1.05, marginBottom: "20px",
-            background: "linear-gradient(135deg,#fff,#e0e8f0 50%,#FF6B6B)",
-            backgroundSize: "200% auto",
-            WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent",
-            animation: "shimmer 6s linear infinite",
-            paddingRight: "0.1em",
           }}>
-            Your AI Assistant,<br />Done Right. 🦞
+            <span style={{
+              background: "linear-gradient(135deg,#fff,#e0e8f0 50%,#FF6B6B)",
+              backgroundSize: "200% auto",
+              WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent",
+              animation: "shimmer 6s linear infinite",
+              display: "inline",
+              paddingRight: "0.15em",
+            }}>
+              Your AI Assistant,<br />Done Right. 🦞
+            </span>
           </h1>
 
           <p style={{
             fontSize: "clamp(15px,1.8vw,18px)", color: "rgba(255,255,255,.5)", lineHeight: 1.8,
             maxWidth: "640px", margin: "0 auto 30px", fontWeight: 300,
           }}>
-            We set up, secure, and manage <span style={{ color: "#FF6B6B", fontWeight: 600 }}>OpenClaw</span> — the most powerful
+            We set up, secure, and manage <a href="https://github.com/ModernMustardSeed/claude-code-power-pack" target="_blank" rel="noopener noreferrer" style={{ color: "#FF6B6B", fontWeight: 600, textDecoration: "none", borderBottom: "1px solid rgba(233,69,96,.3)" }}>OpenClaw</a> — the most powerful
             personal AI assistant ever built — so you get the magic without the risk.{" "}
             <span style={{ color: "#D4A843", fontWeight: 500 }}>White-glove AI concierge service + Voice Staff voice agents.</span>
           </p>
@@ -438,7 +442,7 @@ export default function Home() {
       <section style={sec}><div style={mx}>
         <ScrollReveal>
           <SectionHeader
-            tag="Why OpenClaw Changes Everything"
+            tag={<a href="https://github.com/ModernMustardSeed/claude-code-power-pack" target="_blank" rel="noopener noreferrer" style={{ color: "inherit", textDecoration: "none" }}>Why OpenClaw Changes Everything ↗</a>}
             title={<>Not a chatbot. A <span style={{ color: "#FF6B6B" }}>second brain</span> that acts.</>}
             sub="ChatGPT talks. OpenClaw does. It has hands, eyes, memory, a schedule, and a soul — running 24/7 on YOUR infrastructure, connected to YOUR life."
           />
