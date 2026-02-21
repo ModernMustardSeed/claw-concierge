@@ -384,6 +384,7 @@ export default function Home() {
             backgroundSize: "200% auto",
             WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent",
             animation: "shimmer 6s linear infinite",
+            paddingRight: "0.1em",
           }}>
             Your AI Assistant,<br />Done Right. 🦞
           </h1>
